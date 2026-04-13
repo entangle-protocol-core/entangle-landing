@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #030305;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  /* Next.js 13+ default margin reset */
+  margin: 0;
+  padding: 0;
+}
+
+main pre,
+main code {
+  font-family: inherit;
+  letter-spacing: normal;
+}
+
+@layer components {
+  .type-display {
+    letter-spacing: normal;
+    line-height: 0.9;
+    font-weight: 500;
+    font-size: 3rem;
+  }
+  @media (min-width: 768px) { .type-display { font-size: 5rem; } }
+  @media (min-width: 1024px) { .type-display { font-size: 5.5rem; } }
+
+  .type-title {
+    letter-spacing: normal;
+    line-height: 1.1;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem; /* Professional baseline spacing */
+  }
+  @media (min-width: 768px) { .type-title { font-size: 2.75rem; margin-bottom: 2rem; } }
+
+  .type-subtitle {
+    letter-spacing: normal;
+    line-height: 1.25;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) { .type-subtitle { font-size: 1.125rem; } }
+
+  .type-body {
+    line-height: 1.65;
+    font-weight: 400;
+    font-size: 0.8125rem; /* 13px */
+  }
+  @media (min-width: 768px) { .type-body { font-size: 0.9375rem; /* 15px */ } }
+
+  .type-label {
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-size: 0.5625rem; /* 9px */
+  }
+  @media (min-width: 640px) { .type-label { font-size: 0.625rem; /* 10px */ } }
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Surface tokens for consistent section backgrounds */
+.surface-glass-soft {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.surface-glass-strong {
+  background: rgba(10, 10, 12, 0.6);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.surface-glass-extreme {
+  background: rgba(4, 4, 6, 0.9);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.surface-solid-accent {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+}
+
+/* Metallic Text Utilities */
+.text-metallic-premium {
+  background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 45%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-shadow-strong {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-metallic {
+  background: linear-gradient(to bottom, #ffffff 0%, #b3b3b3 50%, #808080 51%, #e6e6e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-metallic-cyan {
+  background: linear-gradient(to bottom, #d4f4ff 0%, #4bc0c8 50%, #4bc0c8 51%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-metallic-magenta {
+  background: linear-gradient(to bottom, #ffe6f2 0%, #ff4b82 50%, #ff1a66 51%, #ff80ab 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Ensure smooth scrolling when jumping */
+html {
+  scroll-behavior: smooth;
+}
