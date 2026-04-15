@@ -217,7 +217,7 @@ export default function Home() {
               >
                 GitHub
               </button>
-              <a href="https://entangle-protocol-docs.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://docs.entangleprotocol.com/" target="_blank" rel="noopener noreferrer">
                 <button
                   className="px-8 py-3.5 bg-black/40 backdrop-blur-md border border-white/30 text-white font-medium rounded-full hover:bg-white/20 transition-all text-sm shadow-xl"
                 >
@@ -1708,7 +1708,7 @@ export default function Home() {
                   <div><span className="text-[#cccccc]">&gt;</span> import {'{'} Entangle {'}'}</div>
                 </div>
 
-                <a href="https://entangle-protocol-docs.vercel.app/" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <a href="https://docs.entangleprotocol.com/" target="_blank" rel="noopener noreferrer" className="block w-full">
                   <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-label py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                     Read the Docs
                   </button>
