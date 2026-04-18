@@ -268,6 +268,7 @@ export default function Home() {
 
               <div className="relative z-10">
                 <SectionHeader
+                eyebrow={""}
                   title={
                     <span className="text-white">
                       A different philosophy
