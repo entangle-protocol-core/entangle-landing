@@ -268,10 +268,9 @@ export default function Home() {
 
               <div className="relative z-10">
                 <SectionHeader
-                  eyebrow="A different philosophy"
                   title={
                     <span className="text-white">
-                      What if the relay network was a market, not an operator?
+                      A different philosophy
                     </span>
                   }
                 />
@@ -279,7 +278,7 @@ export default function Home() {
                 <div className="w-20 h-[3px] bg-gradient-to-r from-white/60 to-transparent my-8 rounded-full"></div>
 
                 <p className="type-body text-gray-400 font-light max-w-xl mb-6">
-                  Entangle turns trust into competition. Thousands of independent miners race to detect cross-chain messages and deliver them. The fastest, most accurate ones win. The rest are scored out automatically, not by us, but by math.
+                  What if the relay network was a market, not an operator? Entangle turns trust into competition. Thousands of independent miners race to detect cross-chain messages and deliver them. The fastest, most accurate ones win.
                 </p>
                 <p className="type-body text-white font-medium max-w-xl">
                   This is what Bittensor makes possible.
