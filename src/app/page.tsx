@@ -259,7 +259,7 @@ export default function Home() {
               <Image
                 src={entImg}
                 alt="Entangle Protocol Network Structure"
-                className="relative z-10 w-full h-auto object-contain scale-100 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
+                className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
                 priority
               />
             </motion.div>
