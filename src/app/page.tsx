@@ -337,20 +337,20 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
-
+{/* 
         <section id="reference-run" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden"> */}
 
 
 
-            <div className="flex flex-col items-center justify-center text-center w-full relative z-10 mb-8 pt-3">
+            {/* <div className="flex flex-col items-center justify-center text-center w-full relative z-10 mb-8 pt-3">
               <h2 className="type-title mb-2 w-full text-center text-metallic-premium drop-shadow-2xl">
                 Live Performance
               </h2>
-            </div>
+            </div> */}
 
             {/* Delivery Benchmarks inserted into Live Performance section with ORIGINAL design */}
-            <div className="relative z-10 flex flex-col md:flex-row gap-4 mb-8 w-full max-w-[950px] mx-auto text-left">
+            {/* <div className="relative z-10 flex flex-col md:flex-row gap-4 mb-8 w-full max-w-[950px] mx-auto text-left">
               {deliveryBenchmarks.map(([value, title, subtitle]) => (
                 <div key={title} className="flex-1 border-l-[3px] border-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors p-5 shadow-lg">
                   <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-2 drop-shadow-[0_0_15px_rgba(204,204,204,0.2)] mt-1">{value}</div>
@@ -358,13 +358,13 @@ export default function Home() {
                   {subtitle ? <div className="text-[#555] type-label leading-relaxed">{subtitle}</div> : null}
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Main Reference Run Container */}
-            <div className="relative z-10 w-full max-w-[950px] mx-auto border border-white/5 bg-black/20 backdrop-blur-md rounded-[10px] shadow-inner overflow-hidden">
+            {/* <div className="relative z-10 w-full max-w-[950px] mx-auto border border-white/5 bg-black/20 backdrop-blur-md rounded-[10px] shadow-inner overflow-hidden"> */}
 
               {/* Header Slice */}
-              <div className="bg-white/[0.03] px-5 py-2 flex items-center justify-between border-b border-white/5">
+              {/* <div className="bg-white/[0.03] px-5 py-2 flex items-center justify-between border-b border-white/5">
                 <div className="text-[11px]">
                   <span className="text-[#666]">Reference Run ID:</span>
                   <span className="text-white font-bold ml-2">#TEST-2026-03-17-A</span>
@@ -373,16 +373,16 @@ export default function Home() {
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"></path></svg>
                   Verified
                 </div>
-              </div>
+              </div> */}
 
               {/* Execution Diagram */}
-              <div className="relative px-5 py-10 md:py-14 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-0">
+              {/* <div className="relative px-5 py-10 md:py-14 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-0"> */}
 
                 {/* Connecting Line - starts at right edge of left circle, ends at left edge of right circle */}
-                <div className="hidden md:block absolute top-[calc(3.5rem+36px)] left-[calc(1.25rem+126px)] right-[calc(1.25rem+126px)] h-[1.5px] bg-gradient-to-r from-[#cccccc]/80 via-[#111111] to-[#cccccc]/80 z-0 shadow-[0_0_15px_rgba(204,204,204,0.4)]"></div>
+                {/* <div className="hidden md:block absolute top-[calc(3.5rem+36px)] left-[calc(1.25rem+126px)] right-[calc(1.25rem+126px)] h-[1.5px] bg-gradient-to-r from-[#cccccc]/80 via-[#111111] to-[#cccccc]/80 z-0 shadow-[0_0_15px_rgba(204,204,204,0.4)]"></div> */}
 
                 {/* Left Node (Sepolia) */}
-                <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
+                {/* <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
                   <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#cccccc] bg-black/40 backdrop-blur-md shadow-[0_0_20px_rgba(204,204,204,0.3)] flex items-center justify-center mb-3 z-10 hover:bg-black/60 transition-colors">
                     <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 32 32" fill="currentColor">
                       <path d="M15.925 23.969L15.823 24l-7.447-4.391 7.553 10.638 7.57-10.638-7.574 4.36zM15.986 0L8.358 12.67l7.625 4.542 7.643-4.542L15.986 0z" />
@@ -394,29 +394,29 @@ export default function Home() {
                     0x4f90576e...
                   </div>
                   <div className="text-[#555] text-[10px] bg-transparent mt-0.5">Block 10464665</div>
-                </div>
+                </div> */}
 
                 {/* Middle Node (ENTANGLE RELAY) - Desktop: absolutely centered on the line */}
-                <div className="hidden md:flex absolute left-1/2 top-[calc(3.5rem+36px)] -translate-x-1/2 -translate-y-1/2 z-10 w-[170px] bg-[#0a0a0f]/80 hover:bg-white/5 transition-colors backdrop-blur-md border border-white/5 rounded-[8px] p-4 flex-col items-center text-center">
+                {/* <div className="hidden md:flex absolute left-1/2 top-[calc(3.5rem+36px)] -translate-x-1/2 -translate-y-1/2 z-10 w-[170px] bg-[#0a0a0f]/80 hover:bg-white/5 transition-colors backdrop-blur-md border border-white/5 rounded-[8px] p-4 flex-col items-center text-center">
                   <div className="text-[#777] type-label mb-1">Entangle Relay</div>
                   <div className="text-white text-[26px] font-bold mb-0.5">8.3s</div>
                   <div className="flex items-center gap-1 text-[#cccccc] text-[9px] font-bold mt-0.5">
                     <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
                     Optimized
                   </div>
-                </div>
+                </div> */}
                 {/* Middle Node (ENTANGLE RELAY) - Mobile: inline flow */}
-                <div className="md:hidden relative z-10 w-[170px] bg-transparent hover:bg-white/5 transition-colors backdrop-blur-sm border border-white/5 rounded-[8px] p-4 flex flex-col items-center text-center">
+                {/* <div className="md:hidden relative z-10 w-[170px] bg-transparent hover:bg-white/5 transition-colors backdrop-blur-sm border border-white/5 rounded-[8px] p-4 flex flex-col items-center text-center">
                   <div className="text-[#777] type-label mb-1">Entangle Relay</div>
                   <div className="text-white text-[26px] font-bold mb-0.5">8.3s</div>
                   <div className="flex items-center gap-1 text-[#cccccc] text-[9px] font-bold mt-0.5">
                     <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
                     Optimized
                   </div>
-                </div>
+                </div> */}
 
                 {/* Right Node (Arbitrum) */}
-                <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
+                {/* <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
                   <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#cccccc] bg-black/40 backdrop-blur-md shadow-[0_0_20px_rgba(204,204,204,0.3)] flex items-center justify-center mb-3 z-10 hover:bg-black/60 transition-colors">
                     <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2L2 7l10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5z" />
@@ -428,12 +428,12 @@ export default function Home() {
                     0xf802b3b6...
                   </div>
                   <div className="text-[#555] text-[10px] bg-transparent mt-0.5">isRelayed = true</div>
-                </div>
+                </div> */}
 
-              </div>
+              {/* </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
         {false && (
