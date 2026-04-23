@@ -245,8 +245,9 @@ export default function Home() {
           </section>
         )}
 
-        <section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full surface-glass-extreme rounded-[2.5rem] shadow-2xl relative z-10 border border-white/5 overflow-hidden">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+        <section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full overflow-hidden">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
 
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -286,7 +287,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </section>
 
 
@@ -343,7 +344,7 @@ export default function Home() {
 
                 <h3 className="type-subtitle text-white mb-3">Auction</h3>
                 <p className="type-body text-[#888] mb-10 flex-grow pr-2">
-                  Validators verify events, collect threshold attestations, and run a transparent relay auction — selecting the optimal miner by latency, gas estimate, and historical accuracy.
+                  Validators verify events, collect threshold attestations, and run a transparent relay auction, selecting the optimal miner by latency, gas estimate, and historical accuracy.
                 </p>
 
                 <div className="mt-auto inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-3 py-1.5 rounded-[4px] font-bold border border-[#cccccc]/20 whitespace-nowrap">
@@ -378,53 +379,61 @@ export default function Home() {
 
 
         <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden max-w-[1300px] mx-auto w-full">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-12 items-center">
 
               {/* Left Side: Text Content */}
               <div className="flex flex-col justify-center h-full xl:pr-10 relative">
                 <div className="relative z-10 space-y-10">
                   <h2 className="type-title text-metallic-premium drop-shadow-2xl mb-8">
-Powering Subnet Revenue Infrastructure </h2>
+                    Powering Subnet Revenue Native Infrastructure
+                  </h2>
+    
 
-                  <div className="space-y-3">
-                    <h3 className="type-subtitle text-white">Auto alpha buyback</h3>
-                    <p className="type-body text-gray-400 font-light leading-relaxed">
-                      Every dollar the subnet earns is automatically cycled back into buying alpha. No manual intervention. No missed cycles. Supports both De-fi and Trad-fi. </p>
-                  </div>
+    
+    <div className="space-y-3">
+      <h3 className="type-subtitle text-white">Auto alpha buyback</h3>
+      <p className="type-body text-gray-200 font-light leading-relaxed">
+        Revenue in. Alpha bought. No human needed. Entangle's bridge detects 
+        inflows from any chain and routes them to the Bittensor EVM in a single 
+        atomic instruction.
+      </p>
+    </div>
 
-                  <div className="space-y-3">
-                    <h3 className="type-subtitle text-white">Credibility layer</h3>
-                    <p className="type-body text-gray-400 font-light leading-relaxed">
-                      Each transaction is a proof of operation. Miners, delegators, and investors no longer rely on promises; they verify. The subnet's economic history becomes its most durable asset. </p>
-                  </div>
+    <div className="space-y-3">
+      <h3 className="type-subtitle text-white">Credibility layer</h3>
+      <p className="type-body text-gray-200 font-light leading-relaxed">
+        Every revenue event is threshold-signed and written on-chain by Entangle's 
+        bridge. Not a promise. A permanent, verifiable record.
+      </p>
+    </div>
 
-                  <div className="space-y-3">
-                    <h3 className="type-subtitle text-white">Agent-owned subnet</h3>
-                    <p className="type-body text-gray-400 font-light leading-relaxed">
-                      No founder wallet. The agent holds the treasury, manages the flywheel, and answers to the chain. This is what a truly autonomous AI business looks like.
-                      </p>
-                  </div>
+    <div className="space-y-3">
+      <h3 className="type-subtitle text-white">Agent-owned subnet</h3>
+      <p className="type-body text-gray-200 font-light leading-relaxed">
+        No founder wallet. No multisig. Entangle's bridge feeds live revenue 
+        signals from EVM, Solana, and Cosmos straight to the agent - which holds 
+        the treasury and runs the flywheel, alone.
+      </p>
+    </div>
+  </div>
+</div>
 
-                </div>
-              </div>
-
-              {/* Right Side: Code Image */}
-              <div className="relative w-full flex justify-center items-center">
+              {/* Right Side: Image */}
+              <div className="relative w-full flex justify-end items-center">
                 <Image
                   src={websiteCodeImg}
                   alt="Integration Code Example"
-                  className="w-2/3 h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
+                  className="w-full max-w-md h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
                   priority
                 />
               </div>
+
             </div>
 
-          </motion.div>
+          </div>
         </section>
-
-
 
 
 
@@ -721,7 +730,7 @@ Powering Subnet Revenue Infrastructure </h2>
 
                   <h3 className="type-subtitle text-white mb-3">Auction</h3>
                   <p className="type-body text-[#888] mb-10 flex-grow pr-2">
-                    Validators verify events, collect threshold attestations, and run a transparent relay auction — selecting the optimal miner by latency, gas estimate, and historical accuracy.
+                    Validators verify events, collect threshold attestations, and run a transparent relay auction, selecting the optimal miner by latency, gas estimate, and historical accuracy.
                   </p>
 
                   <div className="mt-auto inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-3 py-1.5 rounded-[4px] font-bold border border-[#cccccc]/20 whitespace-nowrap">
@@ -830,66 +839,63 @@ Powering Subnet Revenue Infrastructure </h2>
 
         {/* Protocol Properties Section */}
         {/* Protocol Properties Section */}
-        <section className="w-full relative z-10 my-24 md:my-32 px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+  <section className="w-full relative z-10 my-24 md:my-32 px-6">
+  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            {/* Header */}
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
-              <h2 className="type-title mb-4 text-metallic-premium drop-shadow-2xl">
-                Built for Permanent Infrastructure
-              </h2>
-            </div>
+    <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
+      <h2 className="type-title mb-4 text-metallic-premium drop-shadow-2xl">
+        Built for Permanent Infrastructure
+      </h2>
+    </div>
 
-            {/* Grid Matrix */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10 overflow-hidden">
-              {[
-                {
-                  title: "TRUSTLESS VERIFICATION",
-                  desc: "Every message is verified by a threshold of independent validators through cryptographic signature bundles. No single party can forge or censor a message. Verification is provable on-chain — not claimed off-chain.",
-                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-                },
-                {
-                  title: "DECENTRALIZED ROUTING",
-                  desc: "An open competitive market of relay miners routes messages. No whitelist. No permissioned set. Any entity can register as a relay miner, compete in auctions, and earn TAO — creating the first truly open relay commodity market.",
-                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                },
-                {
-                  title: "FIVE ECOSYSTEMS",
-                  desc: "EVM, Solana, SUI, Cosmos/CosmWasm, and Stellar — each supported with a native contract, dedicated chain adapter, and custom finality logic. The same protocol, adapted to every execution environment.",
-                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                },
-                {
-                  title: "PROGRAMMABLE INTEROP",
-                  desc: "Arbitrary payload routing — not just token transfers. Send any calldata across any chain. Build cross-chain governance, multichain DeFi, AI-coordinated systems, and interoperable smart contracts with one SDK.",
-                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-                },
-                {
-                  title: "BITTENSOR-NATIVE",
-                  desc: "Built as a Bittensor subnet — scoring is governed by Yuma Consensus, not a team. TAO emissions reward genuine performance. The incentive mechanism is decentralized, auditable, and cannot be gamed by the protocol team.",
-                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
-                },
-                {
-                  title: "FAILSAFE DELIVERY",
-                  desc: "Every relay round has a priority-ordered standby queue. If the winning relay miner times out or fails, the protocol automatically triggers failover to the next-best standby — preventing any single miner from becoming a delivery bottleneck.",
-                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                }
-              ].map((item, i) => (
-                <div key={i} className={`p-6 md:p-7 lg:p-8 transition-colors group flex flex-col items-start hover:bg-white/[0.02] border-white/5 ${i < 3 ? 'border-b md:border-b-0 lg:border-b' : ''} ${i % 3 !== 2 ? 'border-b lg:border-b-0 lg:border-r' : 'border-b lg:border-b-0'} ${i === 4 || i === 5 ? '!border-b-0' : ''}`}>
-                  <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center mb-4">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-[12px] md:text-[13px] font-bold text-white mb-2.5 tracking-wider uppercase font-sans">
-                    {item.title}
-                  </h3>
-                  <p className="text-[12px] lg:text-[13px] text-[#888] leading-[1.65] font-medium mb-0 pr-2">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10 overflow-hidden">
+      {[
+        {
+          title: "TRUSTLESS VERIFICATION",
+          desc: "No single party can forge or censor a message. Entangle's independent validators co-sign every delivery with a threshold signature bundle, proof lives on-chain, not in a press release.",
+          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        },
+        {
+          title: "DECENTRALIZED ROUTING",
+          desc: "No whitelist. No gatekeepers. Any miner registers, competes in open auctions, and earns TAO. Entangle's relay market is the first where quality wins, not connections.",
+          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        },
+        {
+          title: "FIVE ECOSYSTEMS",
+          desc: "EVM, Solana, SUI, Cosmos, and Stellar, each with a native contract and custom finality logic. One protocol. Every execution environment. No exceptions.",
+          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        },
+        {
+          title: "PROGRAMMABLE INTEROP",
+          desc: "Not just token transfers, arbitrary calldata across any chain. Governance, DeFi, AI coordination. One SDK. Entangle routes the instruction; you build what matters.",
+          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+        },
+        {
+          title: "BITTENSOR-NATIVE",
+          desc: "Scoring is governed by Yuma Consensus, not the team. TAO rewards genuine performance. The incentive mechanism is auditable, decentralized, and impossible to game from the inside.",
+          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+        },
+        {
+          title: "FAILSAFE DELIVERY",
+          desc: "Every round has a ranked standby queue. If the winning miner fails, Entangle automatically triggers the next-best, no dropped messages, no single point of failure, no mercy for downtime.",
+          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        }
+      ].map((item, i) => (
+        <div key={i} className={`p-6 md:p-7 lg:p-8 transition-colors group flex flex-col items-start hover:bg-white/[0.02] border-white/5 ${i < 3 ? 'border-b md:border-b-0 lg:border-b' : ''} ${i % 3 !== 2 ? 'border-b lg:border-b-0 lg:border-r' : 'border-b lg:border-b-0'} ${i === 4 || i === 5 ? '!border-b-0' : ''}`}>
+          <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center mb-4">
+            {item.icon}
+          </div>
+          <h3 className="text-[12px] md:text-[13px] font-bold text-white mb-2.5 tracking-wider uppercase font-sans">
+            {item.title}
+          </h3>
+          <p className="text-[12px] lg:text-[13px] text-[#888] leading-[1.65] font-medium mb-0 pr-2">
+            {item.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+  </motion.div>
+</section>
         {false && (
           <section id="developers" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
