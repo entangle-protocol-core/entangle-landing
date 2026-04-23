@@ -402,20 +402,22 @@ export default function Home() {
                       We are changing that. By bridging traditional finance with the Bittensor EVM, we are turning subnets into transparent, high-growth AI enterprises.                    </p>
 
                   </div>
+          
 
                 </div>
               </div>
-              </div>
 
-              {/* Right Side: Code Image */}
-              <div className="relative w-full flex justify-center items-center">
-                <Image
-                  src={websiteCodeImg}
-                  alt="Integration Code Example"
-                  className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
-                  priority
-                />
-              </div>
+            {/* Right Side: Code Image */}
+            <div className="relative w-full flex justify-center items-center">
+              <Image
+                src={websiteCodeImg}
+                alt="Integration Code Example"
+                className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
+                priority
+              />
+            </div>
+            </div>
+            
           </motion.div>
         </section>
 
