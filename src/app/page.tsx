@@ -415,7 +415,7 @@ Powering Subnet Revenue Infrastructure </h2>
                 <Image
                   src={websiteCodeImg}
                   alt="Integration Code Example"
-                  className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
+                  className="w-2/3 h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
                   priority
                 />
               </div>
