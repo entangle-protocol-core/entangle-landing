@@ -390,34 +390,38 @@ export default function Home() {
                   </h2>
 
                   <div className="space-y-3">
-                    <h3 className="type-subtitle text-white"></h3>
+                    <h3 className="type-subtitle text-white">Auto alpha buyback</h3>
                     <p className="type-body text-gray-400 font-light leading-relaxed">
-                      The biggest hurdle for decentralized AI isn't the code—it’s the cash flow. Currently, subnet revenue is a black box. Money lands in off-chain bank accounts, leaving miners and delegators to rely on "trust" instead of "truth."
-                    </p>
+                      Every dollar the subnet earns is automatically cycled back into buying alpha. No manual intervention. No missed cycles. Supports both De-fi and Trad-fi. </p>
                   </div>
 
                   <div className="space-y-3">
-                    <h3 className="type-subtitle text-white"></h3>
+                    <h3 className="type-subtitle text-white">Credibility layer</h3>
                     <p className="type-body text-gray-400 font-light leading-relaxed">
-                      We are changing that. By bridging traditional finance with the Bittensor EVM, we are turning subnets into transparent, high-growth AI enterprises.                    </p>
-
+                      Each transaction is a proof of operation. Miners, delegators, and investors no longer rely on promises; they verify. The subnet's economic history becomes its most durable asset. </p>
                   </div>
-          
+
+                  <div className="space-y-3">
+                    <h3 className="type-subtitle text-white">Agent-owned subnet</h3>
+                    <p className="type-body text-gray-400 font-light leading-relaxed">
+                      No founder wallet. The agent holds the treasury, manages the flywheel, and answers to the chain. This is what a truly autonomous AI business looks like.
+                      </p>
+                  </div>
 
                 </div>
               </div>
 
-            {/* Right Side: Code Image */}
-            <div className="relative w-full flex justify-center items-center">
-              <Image
-                src={websiteCodeImg}
-                alt="Integration Code Example"
-                className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
-                priority
-              />
+              {/* Right Side: Code Image */}
+              <div className="relative w-full flex justify-center items-center">
+                <Image
+                  src={websiteCodeImg}
+                  alt="Integration Code Example"
+                  className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
+                  priority
+                />
+              </div>
             </div>
-            </div>
-            
+
           </motion.div>
         </section>
 
