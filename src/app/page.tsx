@@ -290,49 +290,7 @@ export default function Home() {
         </section>
 
 
-        <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden max-w-[1300px] mx-auto w-full">
-
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
-
-              {/* Left Side: Text Content */}
-              <div className="flex flex-col justify-center h-full xl:pr-10 relative">
-                <div className="relative z-10 space-y-10">
-                  <h2 className="type-title text-metallic-premium drop-shadow-2xl mb-8">
-                    The Stripe for Bittensor Subnets
-                  </h2>
-
-                  <div className="space-y-3">
-                    <h3 className="type-subtitle text-white"></h3>
-                    <p className="type-body text-gray-400 font-light leading-relaxed">
-                      The biggest hurdle for decentralized AI isn't the code—it’s the cash flow. Currently, subnet revenue is a black box. Money lands in off-chain bank accounts, leaving miners and delegators to rely on "trust" instead of "truth."
-
-                  </div>
-
-                  <div className="space-y-3">
-                    <h3 className="type-subtitle text-white"></h3>
-                    <p className="type-body text-gray-400 font-light leading-relaxed">
-                      We are changing that. By bridging traditional finance with the Bittensor EVM, we are turning subnets into transparent, high-growth AI enterprises.                    </p>
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Right Side: Code Image */}
-            <div className="relative w-full flex justify-center items-center">
-              <Image
-                src={websiteCodeImg}
-                alt="Integration Code Example"
-                className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
-                priority
-              />
-            </div>
-        </motion.div>
-      </section>
-
-
-      <section id="protocol-flow" className="w-full relative z-10 my-24 md:my-32 px-6">
+    <section id="protocol-flow" className="w-full relative z-10 my-24 md:my-32 px-6">
         <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
           <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
@@ -416,6 +374,52 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+
+        <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden max-w-[1300px] mx-auto w-full">
+
+            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+
+              {/* Left Side: Text Content */}
+              <div className="flex flex-col justify-center h-full xl:pr-10 relative">
+                <div className="relative z-10 space-y-10">
+                  <h2 className="type-title text-metallic-premium drop-shadow-2xl mb-8">
+                    The Stripe for Bittensor Subnets
+                  </h2>
+
+                  <div className="space-y-3">
+                    <h3 className="type-subtitle text-white"></h3>
+                    <p className="type-body text-gray-400 font-light leading-relaxed">
+                      The biggest hurdle for decentralized AI isn't the code—it’s the cash flow. Currently, subnet revenue is a black box. Money lands in off-chain bank accounts, leaving miners and delegators to rely on "trust" instead of "truth."
+
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="type-subtitle text-white"></h3>
+                    <p className="type-body text-gray-400 font-light leading-relaxed">
+                      We are changing that. By bridging traditional finance with the Bittensor EVM, we are turning subnets into transparent, high-growth AI enterprises.                    </p>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Right Side: Code Image */}
+            <div className="relative w-full flex justify-center items-center">
+              <Image
+                src={websiteCodeImg}
+                alt="Integration Code Example"
+                className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
+                priority
+              />
+            </div>
+        </motion.div>
+      </section>
+
+
+  
 
 
 
