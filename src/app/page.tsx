@@ -386,8 +386,7 @@ export default function Home() {
               <div className="flex flex-col justify-center h-full xl:pr-10 relative">
                 <div className="relative z-10 space-y-10">
                   <h2 className="type-title text-metallic-premium drop-shadow-2xl mb-8">
-                    The Stripe for Bittensor Subnets
-                  </h2>
+Powering Subnet Revenue Infrastructure </h2>
 
                   <div className="space-y-3">
                     <h3 className="type-subtitle text-white">Auto alpha buyback</h3>
