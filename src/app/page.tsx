@@ -391,7 +391,7 @@ export default function Home() {
         Powering Subnet Revenue Vaults
       </h2>
       <p className="type-body text-gray-200 font-light leading-relaxed max-w-2xl">
-        Revenue flows in, alpha gets bought, the treasury grows - all without a human hand touching it. Entangle makes it possible for a subnet to own itself, run itself, and prove every step on-chain.
+        Revenue flows in, alpha gets bought, the treasury grows, all without a human hand touching it. Entangle Powered Token Birdging makes it possible for a subnet to own itself, run itself, and prove every step on-chain.
       </p>
     </div>
 
@@ -1168,10 +1168,10 @@ export default function Home() {
                 {/* Top: 30% Protocol Treasury */}
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">30%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">Protocol Treasury</div>
+                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">100%</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Revenue Led Alpha Buybacks</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Accumulates native assets (ETH, SOL, ATOM). Funds operations and growth.
+                    Accumulates native assets (ETH, SOL, ATOM). Crypto assets are automatically converted into Entangle Subnet Alpha.
                   </div>
 
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
@@ -1182,14 +1182,14 @@ export default function Home() {
                 {/* Bottom: 70% Relay Reserve */}
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">70%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">Relay Reserve</div>
+                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">18%</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Contributors Emission issued by Yuma Consensus</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Direct rewards for Relay Miners who successfully execute transactions.
+                    Direct owner reward are distributed to Entangle DAO members. Funds operations and growth.
                   </div>
 
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
-                    Miner Reward
+                    Governance
                   </div>
                 </div>
 
