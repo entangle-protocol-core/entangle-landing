@@ -249,21 +249,26 @@ export default function Home() {
           <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              viewport={{ once: true }}
-              className="relative w-full flex justify-center overflow-visible"
-            >
-
-              <Image
-                src={entImg}
-                alt="Entangle Protocol Network Structure"
-                className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
-                priority
-              />
-            </motion.div>
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+  viewport={{ once: true }}
+  className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[12px] p-8 overflow-hidden"
+>
+  <motion.div
+    animate={{ y: [0, -10, 0] }}
+    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    className="w-full px-6"
+  >
+    <Image
+      src={entImg}
+      alt="Entangle Protocol Network Structure"
+      className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
+      priority
+    />
+  </motion.div>
+</motion.div>
 
             <div className="flex flex-col justify-center h-full xl:pl-10 relative">
 
@@ -377,66 +382,36 @@ export default function Home() {
         </section>
 
 
+<section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
+  <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-        <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
-
-            <div className="grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-12 items-center">
-
-              {/* Left Side: Text Content */}
-              <div className="flex flex-col justify-center h-full xl:pr-10 relative">
-                <div className="relative z-10 space-y-10">
-                  <h2 className="type-title text-metallic-premium drop-shadow-2xl mb-8">
-                    Powering Subnet Revenue Native Infrastructure
-                  </h2>
-    
-
-    
-    <div className="space-y-3">
-      <h3 className="type-subtitle text-white">Auto alpha buyback</h3>
-      <p className="type-body text-gray-200 font-light leading-relaxed">
-        Revenue in. Alpha bought. No human needed. Entangle's bridge detects 
-        inflows from any chain and routes them to the Bittensor EVM in a single 
-        atomic instruction.
+    {/* Centered Title + Description */}
+    <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
+      <h2 className="type-title mb-4 text-metallic-premium drop-shadow-2xl">
+        Powering Subnet Revenue Vaults
+      </h2>
+      <p className="type-body text-gray-200 font-light leading-relaxed max-w-2xl">
+        Revenue flows in, alpha gets bought, the treasury grows - all without a human hand touching it. Entangle makes it possible for a subnet to own itself, run itself, and prove every step on-chain.
       </p>
     </div>
 
-    <div className="space-y-3">
-      <h3 className="type-subtitle text-white">Credibility layer</h3>
-      <p className="type-body text-gray-200 font-light leading-relaxed">
-        Every revenue event is threshold-signed and written on-chain by Entangle's 
-        bridge. Not a promise. A permanent, verifiable record.
-      </p>
-    </div>
-
-    <div className="space-y-3">
-      <h3 className="type-subtitle text-white">Agent-owned subnet</h3>
-      <p className="type-body text-gray-200 font-light leading-relaxed">
-        No founder wallet. No multisig. Entangle's bridge feeds live revenue 
-        signals from EVM, Solana, and Cosmos straight to the agent - which holds 
-        the treasury and runs the flywheel, alone.
-      </p>
-    </div>
-  </div>
+{/* 75% Width Image — Centered */}
+<div className="relative w-7/8 mx-auto rounded-[12px] overflow-hidden border border-white/5 bg-black/20 backdrop-blur-md shadow-inner p-4">
+  <motion.div
+    animate={{ y: [0, -10, 0] }}
+    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <Image
+      src={websiteCodeImg}
+      alt="Integration Code Example"
+      className="w-4/5 h-auto object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.25)] opacity-75 mx-auto block"
+      priority
+    />
+  </motion.div>
 </div>
 
-              {/* Right Side: Image */}
-              <div className="relative w-full flex justify-end items-center">
-                <Image
-                  src={websiteCodeImg}
-                  alt="Integration Code Example"
-                  className="w-full max-w-md h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] opacity-75"
-                  priority
-                />
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-
-
+  </div>
+</section>
 
         {/* 
         <section id="reference-run" className="w-full relative z-10 my-24 md:my-32 px-6">
