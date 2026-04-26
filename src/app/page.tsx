@@ -1183,9 +1183,9 @@ export default function Home() {
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
                   <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">18%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">Contributors Emission issued by Yuma Consensus</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Owner Emissions Fuels Open-source contribution</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Direct owner reward are distributed to Entangle DAO members. Funds operations and growth.
+                    Direct owner reward are distributed to Entangle DAO members. Funds protocol development and growth.
                   </div>
 
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
