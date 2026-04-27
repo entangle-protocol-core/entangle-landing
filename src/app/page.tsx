@@ -244,57 +244,55 @@ export default function Home() {
             </motion.div>
           </section>
         )}
+        
+<section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full overflow-hidden">
+  <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
 
-        <section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full overflow-hidden">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+      viewport={{ once: true }}
+      className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[12px] p-8 overflow-hidden"
+    >
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="w-full px-6"
+      >
+        <Image
+          src={entImg}
+          alt="Entangle Protocol Network Structure"
+          className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
+          priority
+        />
+      </motion.div>
+    </motion.div>
 
+    <div className="flex flex-col justify-center h-full relative">
 
-<motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-  viewport={{ once: true }}
-  className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[12px] p-8 overflow-hidden"
->
-  <motion.div
-    animate={{ y: [0, -10, 0] }}
-    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    className="w-full px-6"
-  >
-    <Image
-      src={entImg}
-      alt="Entangle Protocol Network Structure"
-      className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
-      priority
-    />
-  </motion.div>
-</motion.div>
+      <div className="relative z-10">
+        <SectionHeader
+          eyebrow={""}
+          title={
+            <span className="text-white whitespace-nowrap">
+              A Different Philosophy
+            </span>
+          }
+        />
 
-            <div className="flex flex-col justify-center h-full xl:pl-10 relative">
+        <div className="w-100 h-[2px] bg-gradient-to-r from-white/60 to-transparent my-8 rounded-full"></div>
 
-              <div className="relative z-10">
-                <SectionHeader
-                  eyebrow={""}
-                  title={
-                    <span className="text-white">
-                      A different philosophy
-                    </span>
-                  }
-                />
-
-                <div className="w-20 h-[3px] bg-gradient-to-r from-white/60 to-transparent my-8 rounded-full"></div>
-
-                <p className="type-body text-gray-400 font-light max-w-xl mb-6">
-                  What if the relay network was a market, not an operator? Entangle turns trust into competition. Thousands of independent miners race to detect cross-chain messages and deliver them. The fastest, most accurate ones win.
-                </p>
-                <p className="type-body text-white font-medium max-w-xl">
-                  This is what Bittensor makes possible.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <p className="type-body text-gray-300 font-light max-w-xl mb-6">
+          What if the relay network was a market, not an operator? Entangle turns trust into competition. Thousands of independent miners race to detect cross-chain messages and deliver them. The fastest, most accurate ones win.
+        </p>
+        <p className="type-body text-white font-medium max-w-xl">
+          This is what Bittensor makes possible.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         <section id="protocol-flow" className="w-full relative z-10 my-24 md:my-32 px-6">
           <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
@@ -391,7 +389,7 @@ export default function Home() {
         Powering Subnet Revenue Vaults
       </h2>
       <p className="type-body text-gray-200 font-light leading-relaxed max-w-2xl">
-        Revenue flows in, alpha gets bought, the treasury grows, all without a human hand touching it. Entangle Powered Token Birdging makes it possible for a subnet to own itself, run itself, and prove every step on-chain.
+        Revenue flows in, alpha gets bought, the treasury grows - all without a human hand touching it. Entangle makes it possible for a subnet to own itself, run itself, and prove every step on-chain.
       </p>
     </div>
 
@@ -998,9 +996,20 @@ export default function Home() {
                           </div>
                         )}
                         {name === 'Base' && (
-                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.45)]">
-                            <ChainIcons.base className="w-[38px] h-[38px] text-white ring-1 ring-white/20 rounded-[8px]" />
-                          </div>
+                        <div
+                            aria-label="Base logo"
+                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
+                            style={{
+                              WebkitMaskImage: "url('/chain-logos/base.svg')",
+                              maskImage: "url('/chain-logos/base.svg')",
+                              WebkitMaskRepeat: 'no-repeat',
+                              maskRepeat: 'no-repeat',
+                              WebkitMaskPosition: 'center',
+                              maskPosition: 'center',
+                              WebkitMaskSize: 'contain',
+                              maskSize: 'contain',
+                            }}
+                          />
                         )}
                       </div>
                       <div className="type-subtitle text-white mb-2">{name}</div>
@@ -1035,12 +1044,20 @@ export default function Home() {
                           />
                         )}
                         {name === 'Sui' && (
-                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)] mt-1">
-                            <svg width="40" height="48" viewBox="0 0 64 64" fill="#ffffff">
-                              <path d="M32 4c9 0 22 21 22 32 0 12.2-9.8 22-22 22S10 48.2 10 36C10 25 23 4 32 4z" />
-                              <path d="M23 36c0 5 4 9 9 9 2.8 0 5.3-1.2 7-3.1" fill="none" stroke="#020205" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          </div>
+                      <div
+                            aria-label="Sui logo"
+                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
+                            style={{
+                              WebkitMaskImage: "url('/chain-logos/sui.svg')",
+                              maskImage: "url('/chain-logos/sui.svg')",
+                              WebkitMaskRepeat: 'no-repeat',
+                              maskRepeat: 'no-repeat',
+                              WebkitMaskPosition: 'center',
+                              maskPosition: 'center',
+                              WebkitMaskSize: 'contain',
+                              maskSize: 'contain',
+                            }}
+                          />
                         )}
                         {name === 'Cosmos' && (
                           <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.45)] mt-1">
@@ -1168,10 +1185,10 @@ export default function Home() {
                 {/* Top: 30% Protocol Treasury */}
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">100%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">Revenue Led Alpha Buybacks</div>
+                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">30%</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Protocol Treasury</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Accumulates native assets (ETH, SOL, ATOM). Crypto assets are automatically converted into Entangle Subnet Alpha.
+                    Accumulates native assets (ETH, SOL, ATOM). Funds operations and growth.
                   </div>
 
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
@@ -1182,14 +1199,14 @@ export default function Home() {
                 {/* Bottom: 70% Relay Reserve */}
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">18%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">All Owner Emissions Fuels Open-source Contribution</div>
+                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">70%</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Relay Reserve</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Direct owner reward are distributed to Entangle DAO members. Funds protocol development and growth.
+                    Direct rewards for Relay Miners who successfully execute transactions.
                   </div>
 
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
-                    Governance
+                    Miner Reward
                   </div>
                 </div>
 
