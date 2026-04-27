@@ -228,78 +228,65 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {false && (
-          <section className="my-24 md:my-32 px-6 md:px-12 max-w-5xl mx-auto w-full relative z-10">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid w-full gap-5 md:grid-cols-2">
-              <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
-                <div className="type-display text-white mb-4">$3.7T</div>
-                <div className="type-body text-white mb-2">Blockchains don&apos;t talk.</div>
-                <div className="type-body text-gray-400 leading-relaxed">Trapped in isolated ecosystems.</div>
-              </div>
-              <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
-                <div className="type-display text-white mb-4">$2.7B</div>
-                <div className="type-body text-white mb-2">Stolen from bridges.</div>
-                <div className="type-body text-gray-400 leading-relaxed">(2021-2023). Users chain-jailed. Adoption stalls.</div>
-              </div>
+
+
+
+        <section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full overflow-hidden">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              viewport={{ once: true }}
+              className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[12px] p-8 overflow-hidden"
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="w-full px-6"
+              >
+                <Image
+                  src={entImg}
+                  alt="Entangle Protocol Network Structure"
+                  className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
+                  priority
+                />
+              </motion.div>
             </motion.div>
-          </section>
-        )}
-        
-<section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full overflow-hidden">
-  <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
 
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-      viewport={{ once: true }}
-      className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[12px] p-8 overflow-hidden"
-    >
-      <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="w-full px-6"
-      >
-        <Image
-          src={entImg}
-          alt="Entangle Protocol Network Structure"
-          className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
-          priority
-        />
-      </motion.div>
-    </motion.div>
+            <div className="flex flex-col justify-center h-full relative">
 
-    <div className="flex flex-col justify-center h-full relative">
+              <div className="relative z-10">
+                <SectionHeader
+                  eyebrow={""}
+                  title={
+                    <span className="text-white whitespace-nowrap">
+                      A Different Philosophy
+                    </span>
+                  }
+                />
 
-      <div className="relative z-10">
-        <SectionHeader
-          eyebrow={""}
-          title={
-            <span className="text-white whitespace-nowrap">
-              A Different Philosophy
-            </span>
-          }
-        />
+                <div className="w-100 h-[2px] bg-gradient-to-r from-white/60 to-transparent my-8 rounded-full"></div>
 
-        <div className="w-100 h-[2px] bg-gradient-to-r from-white/60 to-transparent my-8 rounded-full"></div>
-
-        <p className="type-body text-gray-300 font-light max-w-xl mb-6">
-          What if the relay network was a market, not an operator? Entangle turns trust into competition. Thousands of independent miners race to detect cross-chain messages and deliver them. The fastest, most accurate ones win.
-        </p>
-        <p className="type-body text-white font-medium max-w-xl">
-          This is what Bittensor makes possible.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+                <p className="type-body text-gray-300 font-normal max-w-xl mb-6">
+                  What if the relay network was a market, not an operator? Entangle turns trust into competition. Thousands of independent miners race to detect cross-chain messages and deliver them. The fastest, most accurate ones win.
+                </p>
+                <p className="type-body text-white font-medium max-w-xl">
+                  This is what Bittensor makes possible.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section id="protocol-flow" className="w-full relative z-10 my-24 md:my-32 px-6">
           <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
               <h2 className="type-title mb-2 text-metallic-premium drop-shadow-2xl">
-                Three steps - Fully autonomous
+                Introducing The First Relay Marketplace
+
               </h2>
             </div>
 
@@ -380,36 +367,315 @@ export default function Home() {
         </section>
 
 
-<section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
-  <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-    {/* Centered Title + Description */}
-    <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
-      <h2 className="type-title mb-4 text-metallic-premium drop-shadow-2xl">
-        Powering Subnet Revenue Vaults
-      </h2>
-      <p className="type-body text-gray-200 font-light leading-relaxed max-w-2xl">
-        Revenue flows in, alpha gets bought, the treasury grows - all without a human hand touching it. Entangle makes it possible for a subnet to own itself, run itself, and prove every step on-chain.
-      </p>
-    </div>
+        <section id="chain-support" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-10">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl">Every chain. One layer</h2>
+            </div>
 
-{/* 75% Width Image — Centered */}
-<div className="relative w-7/8 mx-auto rounded-[12px] overflow-hidden border border-white/5 bg-black/20 backdrop-blur-md shadow-inner p-4">
-  <motion.div
-    animate={{ y: [0, -10, 0] }}
-    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-  >
-    <Image
-      src={websiteCodeImg}
-      alt="Integration Code Example"
-      className="w-4/5 h-auto object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.25)] opacity-75 mx-auto block"
-      priority
-    />
-  </motion.div>
-</div>
+            <div className="border border-white/5 bg-black/20 backdrop-blur-md rounded-2xl overflow-hidden shadow-inner relative z-10">
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5 border-b border-white/5">
+                {chainSupport.slice(0, 4).map(([name, type], idx) => {
+                  let extra = "";
+                  if (name === 'Ethereum') extra = "border-t-[3px] border-t-white pt-6 !border-t-[#cccccc]";
+                  else extra = "border-t-[3px] border-t-transparent pt-6";
 
-  </div>
-</section>
+                  return (
+                    <div key={name} className={`flex flex-col items-center justify-center pb-6 bg-transparent hover:bg-white/5 transition-colors ${extra} relative group`}>
+                      <div className="mb-4 h-12 flex items-center justify-center w-full">
+                        {name === 'Ethereum' && (
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]">
+                            <ChainIcons.ethereum className="w-[38px] h-[38px] text-white" />
+                          </div>
+                        )}
+                        {name === 'Arbitrum' && (
+                          <div className="flex flex-col justify-center items-center opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.35)]">
+                            <img
+                              src="/chain-logos/arbitrum.svg"
+                              alt="Arbitrum logo"
+                              className="w-[44px] h-[44px] [filter:grayscale(1)_brightness(1.45)_contrast(1.1)]"
+                            />
+                          </div>
+                        )}
+                        {name === 'Optimism' && (
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]">
+                            <ChainIcons.optimism className="w-[42px] h-[42px] text-white" />
+                          </div>
+                        )}
+                        {name === 'Base' && (
+                          <div
+                            aria-label="Base logo"
+                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
+                            style={{
+                              WebkitMaskImage: "url('/chain-logos/base.svg')",
+                              maskImage: "url('/chain-logos/base.svg')",
+                              WebkitMaskRepeat: 'no-repeat',
+                              maskRepeat: 'no-repeat',
+                              WebkitMaskPosition: 'center',
+                              maskPosition: 'center',
+                              WebkitMaskSize: 'contain',
+                              maskSize: 'contain',
+                            }}
+                          />
+                        )}
+                      </div>
+                      <div className="type-subtitle text-white mb-2">{name}</div>
+                      <div className="type-label text-gray-500">{type}</div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5 border-b border-white/5">
+                {chainSupport.slice(4, 8).map(([name, type], idx) => {
+                  let extra = "";
+                  if (name === 'Solana') extra = "border-t-[3px] border-t-white pt-6 !border-t-[#cccccc]";
+                  else extra = "border-t-[3px] border-t-transparent pt-6";
+
+                  return (
+                    <div key={name} className={`flex flex-col items-center justify-center pb-6 bg-transparent hover:bg-white/5 transition-colors ${extra} relative group`}>
+                      <div className="mb-4 h-12 flex items-center justify-center w-full">
+                        {name === 'Solana' && (
+                          <div
+                            aria-label="Solana logo"
+                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
+                            style={{
+                              WebkitMaskImage: "url('/chain-logos/solana.svg')",
+                              maskImage: "url('/chain-logos/solana.svg')",
+                              WebkitMaskRepeat: 'no-repeat',
+                              maskRepeat: 'no-repeat',
+                              WebkitMaskPosition: 'center',
+                              maskPosition: 'center',
+                              WebkitMaskSize: 'contain',
+                              maskSize: 'contain',
+                            }}
+                          />
+                        )}
+                        {name === 'Sui' && (
+                          <div
+                            aria-label="Sui logo"
+                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
+                            style={{
+                              WebkitMaskImage: "url('/chain-logos/sui.svg')",
+                              maskImage: "url('/chain-logos/sui.svg')",
+                              WebkitMaskRepeat: 'no-repeat',
+                              maskRepeat: 'no-repeat',
+                              WebkitMaskPosition: 'center',
+                              maskPosition: 'center',
+                              WebkitMaskSize: 'contain',
+                              maskSize: 'contain',
+                            }}
+                          />
+                        )}
+                        {name === 'Cosmos' && (
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.45)] mt-1">
+                            <img
+                              src="/chain-logos/cosmos.svg"
+                              alt="Cosmos logo"
+                              className="w-[50px] h-[50px] [filter:grayscale(1)_brightness(1.8)_contrast(1.05)]"
+                            />
+                          </div>
+                        )}
+                        {name === 'Stellar' && (
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mt-1">
+                            <ChainIcons.stellar className="w-[44px] h-[44px] text-white" />
+                          </div>
+                        )}
+                      </div>
+                      <div className="type-subtitle text-white mb-2">{name}</div>
+                      <div className="type-label text-gray-500">{type}</div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Banner at bottom */}
+              <div className="p-4 bg-transparent flex items-center justify-start border-l-[4px] border-[#cccccc]">
+                <div className="flex items-center gap-4 pl-2">
+                  <span className="text-gray-300 text-xl">⏱️</span>
+                  <div className="text-white type-body">
+                    <span className="font-semibold">&lt; 10s Delivery on L2s.</span> <span className="text-gray-500 ml-2">Add a new chain with just one adapter class.</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        </section>
+
+
+
+        {/* Competition Table Section */}
+        <section id="competition" className="w-full relative z-10 my-24 md:my-32 px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            {/* Header */}
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-8 pt-4">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+                Relay Network with Real Competition
+              </h2>
+            </div>
+
+            {/* Inner Table Container */}
+            <div className="border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner overflow-x-auto relative z-10 p-6 md:p-8">
+              <div className="min-w-[800px] relative">
+
+                {/* Shiny Highlight behind Entangle column (33% to 50% width) */}
+                <div className="absolute top-10 bottom-10 left-[31%] w-[20%] bg-white/[0.06] blur-[60px] rounded-full pointer-events-none z-0"></div>
+
+                <div className="relative z-10">
+                  {/* Table Header */}
+                  <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 text-[11px] uppercase tracking-[0.2em] font-mono font-bold items-end border-b border-white/[0.08] pb-5 mb-2">
+                    <div className="text-[#888] pl-2">Metric</div>
+                    <div className="relative text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+                      <div className="absolute top-[-24px] left-0 right-10 h-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
+                      Entangle
+                    </div>
+                    <div className="text-[#888]">Wormhole</div>
+                    <div className="text-[#888]">LayerZero</div>
+                    <div className="text-[#888]">Axelar</div>
+                  </div>
+
+                  <div className="flex flex-col">
+                    {[
+                      {
+                        f: "Decentralization",
+                        sub: "Who controls message delivery",
+                        e: "Open market",
+                        w: "19 guardians",
+                        l: "Whitelisted DVNs",
+                        a: "Validator set",
+                      },
+                      {
+                        f: "Security model",
+                        sub: "Where proof lives",
+                        e: "On-chain always",
+                        w: "Off-chain sigs",
+                        l: "Off-chain attestation",
+                        a: "On-chain, gated",
+                      },
+                      {
+                        f: "Censorship resistance",
+                        sub: "Can a message be blocked",
+                        e: "No gatekeeper",
+                        w: "Multisig can block",
+                        l: "DVN can block",
+                        a: "Validator can block",
+                      },
+                      {
+                        f: "Delivery speed",
+                        sub: "Finality on L2s",
+                        e: "Auto Optimize",
+                        w: "~15–30 seconds",
+                        l: "~15–30 seconds",
+                        a: "~30–60 seconds",
+                      },
+                      {
+                        f: "Failure recovery",
+                        sub: "When a relayer drops",
+                        e: "Auto failover",
+                        w: "Manual retry",
+                        l: "Manual retry",
+                        a: "Manual retry",
+                      },
+                      {
+                        f: "User cost",
+                        sub: "Chains you pay gas on",
+                        e: "Source chain only",
+                        w: "Both chains",
+                        l: "Both chains",
+                        a: "Both chains",
+                      },
+                      {
+                        f: "Single point of failure",
+                        sub: "Protocol dependency risk",
+                        e: "None",
+                        w: "Jump Crypto",
+                        l: "LayerZero Labs",
+                        a: "Axelar Foundation",
+                      },
+                      {
+                        f: "Payload support",
+                        sub: "What you can send",
+                        e: "Any calldata",
+                        w: "Tokens + limited",
+                        l: "App-layer only",
+                        a: "Tokens primarily",
+                      },
+                      {
+                        f: "Sustainability",
+                        sub: "How the protocol funds itself",
+                        e: "Fee flywheel",
+                        w: "VC / grants",
+                        l: "VC / grants",
+                        a: "VC / grants",
+                      },
+                    ].map((row, i, arr) => (
+                      <div
+                        key={i}
+                        className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 py-4 hover:bg-white/[0.02] transition-colors items-center text-[12px] ${i !== arr.length - 1 ? "border-b border-white/[0.03]" : ""}`}
+                      >
+                        {/* Metric */}
+                        <div className="pl-2 flex items-center gap-2">
+                          <span className="text-white font-semibold text-[13px] tracking-wide">{row.f}</span>
+                          <div className="relative group">
+                            <div className="w-[14px] h-[14px] rounded-full border border-white/20 flex items-center justify-center cursor-default shrink-0 hover:border-white/40 transition-colors">
+                              <span className="text-[9px] text-white/40 font-bold leading-none group-hover:text-white/70 transition-colors">i</span>
+                            </div>
+                            {/* Tooltip */}
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 bg-[#1a1a1a] border border-white/10 rounded-[6px] text-[11px] text-[#aaa] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-xl">
+                              {row.sub}
+                              <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[4px] border-transparent border-t-white/10" />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Entangle */}
+                        <div className="flex items-center gap-1.5">
+                          <svg className="w-[11px] h-[11px] shrink-0 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span className="text-white text-[12px] font-medium drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">{row.e}</span>
+                        </div>
+
+                        {/* Wormhole */}
+                        <div className="flex items-center gap-1.5">
+                          <svg className="w-[10px] h-[10px] shrink-0 text-[#3a3a3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                          </svg>
+                          <span className="text-[#888] text-[12px]">{row.w}</span>
+                        </div>
+
+                        {/* LayerZero */}
+                        <div className="flex items-center gap-1.5">
+                          <svg className="w-[10px] h-[10px] shrink-0 text-[#3a3a3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                          </svg>
+                          <span className="text-[#888] text-[12px]">{row.l}</span>
+                        </div>
+
+                        {/* Axelar */}
+                        <div className="flex items-center gap-1.5">
+                          <svg className="w-[10px] h-[10px] shrink-0 text-[#3a3a3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                          </svg>
+                          <span className="text-[#888] text-[12px]">{row.a}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+
 
         {/* 
         <section id="reference-run" className="w-full relative z-10 my-24 md:my-32 px-6">
@@ -736,139 +1002,70 @@ export default function Home() {
           </section>
         )}
 
-        {/* Competition Table Section */}
-        <section id="competition" className="w-full relative z-10 my-24 md:my-32 px-6">
+
+
+        {/* Protocol Properties Section */}
+        {/* Protocol Properties Section */}
+        <section className="w-full relative z-10 my-24 md:my-32 px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            {/* Header */}
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-8 pt-4">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
-                The only relay network with real competition
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
+              <h2 className="type-title mb-4 text-metallic-premium drop-shadow-2xl">
+                Built for Permanent Infrastructures
               </h2>
             </div>
 
-            {/* Inner Table Container */}
-            <div className="border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner overflow-x-auto relative z-10 p-6 md:p-8">
-              <div className="min-w-[800px] relative">
-
-                {/* Shiny Highlight behind Entangle column (33% to 50% width) */}
-                <div className="absolute top-10 bottom-10 left-[31%] w-[20%] bg-white/[0.06] blur-[60px] rounded-full pointer-events-none z-0"></div>
-
-                <div className="relative z-10">
-                  {/* Table Header */}
-                  <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 text-[11px] uppercase tracking-[0.2em] font-mono font-bold items-end border-b border-white/[0.08] pb-5 mb-2">
-                    <div className="text-[#888] pl-2">Feature</div>
-                    <div className="relative text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
-                      <div className="absolute top-[-24px] left-0 right-10 h-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
-                      Entangle
-                    </div>
-                    <div className="text-[#888]">Wormhole</div>
-                    <div className="text-[#888]">LayerZero</div>
-                    <div className="text-[#888]">Axelar</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10 overflow-hidden">
+              {[
+                {
+                  title: "Data Intregity by Design",
+                  desc: "Multiple independent validators sign every delivery. The proof is recorded on-chain: visible to everyone, controlled by no one.",
+                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                },
+                {
+                  title: "Open market for relayers",
+                  desc: "Anyone can compete to relay messages. Quality is rewarded with TAO. No whitelists, no gatekeepers: the best operators win.",
+                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                },
+                {
+                  title: "Every major chain, natively",
+                  desc: "EVM, Solana, SUI, Cosmos, Stellar: each with a native contract built for that chain's rules. One protocol, everywhere.",
+                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                },
+                {
+                  title: "Send anything, not just tokens",
+                  desc: "Governance votes, DeFi calls, AI instructions: any action on any chain. One SDK. Build what you want; Entangle moves it.",
+                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                },
+                {
+                  title: "Rewards you can't game",
+                  desc: "Scoring is run by Yuma Consensus, not the team. TAO flows to real performance: transparent, on-chain, impossible to manipulate.",
+                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+                },
+                {
+                  title: "If one fails, the next steps in",
+                  desc: "Every delivery has a ranked backup queue. If the top relayer misses, the next one delivers automatically: zero dropped messages.",
+                  icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                }
+              ].map((item, i) => (
+                <div key={i} className={`p-6 md:p-7 lg:p-8 transition-colors group flex flex-col items-start hover:bg-white/[0.02] border-white/5 ${i < 3 ? 'border-b md:border-b-0 lg:border-b' : ''} ${i % 3 !== 2 ? 'border-b lg:border-b-0 lg:border-r' : 'border-b lg:border-b-0'} ${i === 4 || i === 5 ? '!border-b-0' : ''}`}>
+                  <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center mb-4">
+                    {item.icon}
                   </div>
-
-                  {/* Rows */}
-                  <div className="flex flex-col">
-                    {[
-                      { f: "Open miner competition", e: "check", w: "cross", l: "cross", a: "cross" },
-                      { f: "Permissionless mining", e: "check", w: "cross", l: "cross", a: "cross" },
-                      { f: "Economic incentives for relayers", e: "TAO emissions", w: "Fixed fees only", l: "Fixed fees only", a: "Fixed fees only" },
-                      { f: "Source-chain-only fee for users", e: "check", w: "cross", l: "Partial", a: "cross" },
-                      { f: "Dynamic gas oracle", e: "check", w: "cross", l: "cross", a: "cross" },
-                      { f: "Two-phase bid competition", e: "gas", w: "cross", l: "cross", a: "cross" },
-                      { f: "Self-sustaining economics", e: "fee", w: "cross", l: "cross", a: "cross" },
-                      { f: "Decentralised chain watching", e: "scan", w: "Guardian set", l: "DVN set", a: "Validator set" },
-                    ].map((row, i) => (
-                      <div key={i} className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 py-5 hover:bg-white/[0.02] transition-colors items-center text-[13px] ${i !== 7 ? 'border-b border-white/[0.03]' : ''}`}>
-                        <div className="text-white font-medium pl-2 tracking-wide">{row.f}</div>
-
-                        <div className="text-white font-medium flex items-center gap-3 tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
-                          {row.e === "check" && <svg className="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>}
-                          {row.e === "gas" && <><svg className="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg> No gas waste</>}
-                          {row.e === "fee" && <><svg className="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg> Fee flywheel</>}
-                          {row.e === "scan" && <><svg className="w-[16px] h-[16px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg> Scanner miners</>}
-                          {row.e !== "check" && row.e !== "gas" && row.e !== "fee" && row.e !== "scan" && row.e}
-                        </div>
-
-                        <div className="text-[#666] font-medium tracking-wide">
-                          {row.w === "cross" ? <svg className="w-[13px] h-[13px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg> : row.w}
-                        </div>
-                        <div className="text-[#666] font-medium tracking-wide">
-                          {row.l === "cross" ? <svg className="w-[13px] h-[13px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg> : row.l}
-                        </div>
-                        <div className="text-[#666] font-medium tracking-wide">
-                          {row.a === "cross" ? <svg className="w-[13px] h-[13px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg> : row.a}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-[12px] md:text-[13px] font-bold text-white mb-2.5 tracking-wider uppercase font-sans">
+                    {item.title}
+                  </h3>
+                  <p className="text-[12px] lg:text-[13px] text-[#888] leading-[1.65] font-medium mb-0 pr-2">
+                    {item.desc}
+                  </p>
                 </div>
-
-              </div>
+              ))}
             </div>
           </motion.div>
         </section>
 
 
-        {/* Protocol Properties Section */}
-        {/* Protocol Properties Section */}
-  <section className="w-full relative z-10 my-24 md:my-32 px-6">
-  <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-    <div className="flex flex-col items-center text-center w-full relative z-10 mb-10 pt-4">
-      <h2 className="type-title mb-4 text-metallic-premium drop-shadow-2xl">
-        Built for Permanent Infrastructure
-      </h2>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10 overflow-hidden">
-      {[
-        {
-          title: "TRUSTLESS VERIFICATION",
-          desc: "No single party can forge or censor a message. Entangle's independent validators co-sign every delivery with a threshold signature bundle, proof lives on-chain, not in a press release.",
-          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-        },
-        {
-          title: "DECENTRALIZED ROUTING",
-          desc: "No whitelist. No gatekeepers. Any miner registers, competes in open auctions, and earns TAO. Entangle's relay market is the first where quality wins, not connections.",
-          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-        },
-        {
-          title: "FIVE ECOSYSTEMS",
-          desc: "EVM, Solana, SUI, Cosmos, and Stellar, each with a native contract and custom finality logic. One protocol. Every execution environment. No exceptions.",
-          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-        },
-        {
-          title: "PROGRAMMABLE INTEROP",
-          desc: "Not just token transfers, arbitrary calldata across any chain. Governance, DeFi, AI coordination. One SDK. Entangle routes the instruction; you build what matters.",
-          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-        },
-        {
-          title: "BITTENSOR-NATIVE",
-          desc: "Scoring is governed by Yuma Consensus, not the team. TAO rewards genuine performance. The incentive mechanism is auditable, decentralized, and impossible to game from the inside.",
-          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
-        },
-        {
-          title: "FAILSAFE DELIVERY",
-          desc: "Every round has a ranked standby queue. If the winning miner fails, Entangle automatically triggers the next-best, no dropped messages, no single point of failure, no mercy for downtime.",
-          icon: <svg className="w-[18px] h-[18px] text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        }
-      ].map((item, i) => (
-        <div key={i} className={`p-6 md:p-7 lg:p-8 transition-colors group flex flex-col items-start hover:bg-white/[0.02] border-white/5 ${i < 3 ? 'border-b md:border-b-0 lg:border-b' : ''} ${i % 3 !== 2 ? 'border-b lg:border-b-0 lg:border-r' : 'border-b lg:border-b-0'} ${i === 4 || i === 5 ? '!border-b-0' : ''}`}>
-          <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center mb-4">
-            {item.icon}
-          </div>
-          <h3 className="text-[12px] md:text-[13px] font-bold text-white mb-2.5 tracking-wider uppercase font-sans">
-            {item.title}
-          </h3>
-          <p className="text-[12px] lg:text-[13px] text-[#888] leading-[1.65] font-medium mb-0 pr-2">
-            {item.desc}
-          </p>
-        </div>
-      ))}
-    </div>
-  </motion.div>
-</section>
         {false && (
           <section id="developers" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
@@ -960,140 +1157,6 @@ export default function Home() {
 
 
 
-        <section id="chain-support" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-10">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">Five Ecosystem. One relay layer.</h2>
-            </div>
-
-            <div className="border border-white/5 bg-black/20 backdrop-blur-md rounded-2xl overflow-hidden shadow-inner relative z-10">
-              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5 border-b border-white/5">
-                {chainSupport.slice(0, 4).map(([name, type], idx) => {
-                  let extra = "";
-                  if (name === 'Ethereum') extra = "border-t-[3px] border-t-white pt-6 !border-t-[#cccccc]";
-                  else extra = "border-t-[3px] border-t-transparent pt-6";
-
-                  return (
-                    <div key={name} className={`flex flex-col items-center justify-center pb-6 bg-transparent hover:bg-white/5 transition-colors ${extra} relative group`}>
-                      <div className="mb-4 h-12 flex items-center justify-center w-full">
-                        {name === 'Ethereum' && (
-                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]">
-                            <ChainIcons.ethereum className="w-[38px] h-[38px] text-white" />
-                          </div>
-                        )}
-                        {name === 'Arbitrum' && (
-                          <div className="flex flex-col justify-center items-center opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.35)]">
-                            <img
-                              src="/chain-logos/arbitrum.svg"
-                              alt="Arbitrum logo"
-                              className="w-[44px] h-[44px] [filter:grayscale(1)_brightness(1.45)_contrast(1.1)]"
-                            />
-                          </div>
-                        )}
-                        {name === 'Optimism' && (
-                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]">
-                            <ChainIcons.optimism className="w-[42px] h-[42px] text-white" />
-                          </div>
-                        )}
-                        {name === 'Base' && (
-                        <div
-                            aria-label="Base logo"
-                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
-                            style={{
-                              WebkitMaskImage: "url('/chain-logos/base.svg')",
-                              maskImage: "url('/chain-logos/base.svg')",
-                              WebkitMaskRepeat: 'no-repeat',
-                              maskRepeat: 'no-repeat',
-                              WebkitMaskPosition: 'center',
-                              maskPosition: 'center',
-                              WebkitMaskSize: 'contain',
-                              maskSize: 'contain',
-                            }}
-                          />
-                        )}
-                      </div>
-                      <div className="type-subtitle text-white mb-2">{name}</div>
-                      <div className="type-label text-gray-500">{type}</div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5 border-b border-white/5">
-                {chainSupport.slice(4, 8).map(([name, type], idx) => {
-                  let extra = "";
-                  if (name === 'Solana') extra = "border-t-[3px] border-t-white pt-6 !border-t-[#cccccc]";
-                  else extra = "border-t-[3px] border-t-transparent pt-6";
-
-                  return (
-                    <div key={name} className={`flex flex-col items-center justify-center pb-6 bg-transparent hover:bg-white/5 transition-colors ${extra} relative group`}>
-                      <div className="mb-4 h-12 flex items-center justify-center w-full">
-                        {name === 'Solana' && (
-                          <div
-                            aria-label="Solana logo"
-                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
-                            style={{
-                              WebkitMaskImage: "url('/chain-logos/solana.svg')",
-                              maskImage: "url('/chain-logos/solana.svg')",
-                              WebkitMaskRepeat: 'no-repeat',
-                              maskRepeat: 'no-repeat',
-                              WebkitMaskPosition: 'center',
-                              maskPosition: 'center',
-                              WebkitMaskSize: 'contain',
-                              maskSize: 'contain',
-                            }}
-                          />
-                        )}
-                        {name === 'Sui' && (
-                      <div
-                            aria-label="Sui logo"
-                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
-                            style={{
-                              WebkitMaskImage: "url('/chain-logos/sui.svg')",
-                              maskImage: "url('/chain-logos/sui.svg')",
-                              WebkitMaskRepeat: 'no-repeat',
-                              maskRepeat: 'no-repeat',
-                              WebkitMaskPosition: 'center',
-                              maskPosition: 'center',
-                              WebkitMaskSize: 'contain',
-                              maskSize: 'contain',
-                            }}
-                          />
-                        )}
-                        {name === 'Cosmos' && (
-                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.45)] mt-1">
-                            <img
-                              src="/chain-logos/cosmos.svg"
-                              alt="Cosmos logo"
-                              className="w-[50px] h-[50px] [filter:grayscale(1)_brightness(1.8)_contrast(1.05)]"
-                            />
-                          </div>
-                        )}
-                        {name === 'Stellar' && (
-                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mt-1">
-                            <ChainIcons.stellar className="w-[44px] h-[44px] text-white" />
-                          </div>
-                        )}
-                      </div>
-                      <div className="type-subtitle text-white mb-2">{name}</div>
-                      <div className="type-label text-gray-500">{type}</div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Banner at bottom */}
-              <div className="p-4 bg-transparent flex items-center justify-start border-l-[4px] border-[#cccccc]">
-                <div className="flex items-center gap-4 pl-2">
-                  <span className="text-gray-300 text-xl">⏱️</span>
-                  <div className="text-white type-body">
-                    <span className="font-semibold">&lt; 10s Delivery on L2s.</span> <span className="text-gray-500 ml-2">Add a new chain with just one adapter class.</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </motion.div>
-        </section>
 
         <section id="realtime-fees" className="w-full relative z-10 my-24 md:my-32 px-6">
           <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
@@ -1148,8 +1211,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-white type-body font-bold mb-0.5 leading-none">Gas Oracle</div>
-                      <div className="text-[#666] text-[10px]">Median price every 2m</div>
+                      <div className="text-white type-body font-bold mb-0.5 leading-none">Fee Accumulator</div>
+                      <div className="text-[#666] text-[10px]">Native gas fees held on source chain</div>
                     </div>
                   </div>
 
@@ -1161,17 +1224,25 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-white type-body font-bold mb-0.5 leading-none">Circuit Breaker</div>
-                      <div className="text-[#666] text-[10px]">Staleness check &gt;50 blks</div>
+                      <div className="text-white type-body font-bold mb-0.5 leading-none">TAO Conversion</div>
+                      <div className="text-[#666] text-[10px]">Scheduled swap and bridge to BittensorEVM</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Outbound connection lines (Forking UP and DOWN from Center) */}
                 {/* Top diagonal line */}
-                <div className="hidden xl:block absolute right-[-62px] top-1/2 w-[62px] h-[1.5px] bg-[#777777] transform rotate-[35deg] origin-left z-0"></div>
-                {/* Bottom diagonal line */}
-                <div className="hidden xl:block absolute right-[-62px] top-1/2 w-[62px] h-[1.5px] bg-[#777777] transform rotate-[-35deg] origin-left z-0"></div>
+                <div className="hidden xl:block absolute right-[-62px] top-1/2 -translate-y-1/2 w-[62px] z-0">
+                  {/* Horizontal line from middle to spine */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[20px] h-[1.5px] bg-[#777777]"></div>
+                  {/* Vertical spine */}
+                  <div className="absolute left-[20px] top-[-60px] w-[1.5px] h-[120px] bg-[#777777]"></div>
+                  {/* Top arm to right */}
+                  <div className="absolute left-[20px] top-[-60px] w-[42px] h-[1.5px] bg-[#777777]"></div>
+                  
+                  {/* Bottom arm to right */}
+                  <div className="absolute left-[20px] bottom-[-60px] w-[42px] h-[1.5px] bg-[#777777]"></div>
+                </div>
 
                 {/* Note: since elements origin from left, a positive rotation angles downwards. Negative angles upwards. We swapped them if needed, but rotate-[35deg] visually goes DOWN, rotate-[-35deg] goes UP relative to right-facing vectors. */}
               </div>
@@ -1182,31 +1253,29 @@ export default function Home() {
               {/* 3. Right Blocks Column */}
               <div className="flex flex-col gap-4 xl:gap-4 shrink-0 w-full sm:w-[320px] xl:w-[300px]">
 
-                {/* Top: 30% Protocol Treasury */}
+                {/* 100% Revenue Buybacks */}
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">30%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">Protocol Treasury</div>
+                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">100%</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Revenue Drives Alpha Buyback</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Accumulates native assets (ETH, SOL, ATOM). Funds operations and growth.
+                    Protocol fees accumulate as native assets (ETH, SOL, ATOM) directly flows into Entangle Subnet in real time.
                   </div>
-
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
-                    On-chain
+                    On-Chain
                   </div>
                 </div>
 
-                {/* Bottom: 70% Relay Reserve */}
+                {/* 18% Open Source Rewards */}
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">70%</div>
-                  <div className="text-white type-body xl:type-subtitle mb-2">Relay Reserve</div>
+                  <div className="text-[48px] font-bold text-[#cccccc] leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(204,204,204,0.3)]">18%</div>
+                  <div className="text-white type-body xl:type-subtitle mb-2">Owner Emission Rewards Contribution</div>
                   <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
-                    Direct rewards for Relay Miners who successfully execute transactions.
+                    Subnet Owner emission is distributed to contributors building the Entangle ecosystem. Released gradually through a DAO-governed multisig.
                   </div>
-
                   <div className="inline-block bg-[#cccccc]/10 text-[#cccccc] text-[10px] px-2 py-1 rounded-[4px] font-bold">
-                    Miner Reward
+                    DAO Governed
                   </div>
                 </div>
 
@@ -1214,6 +1283,85 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+
+
+
+        <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            {/* Centered Title */}
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-4 pt-4">
+
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+                Infrastructure for Agentic Finance
+              </h2>
+            </div>
+
+            {/* Side by Side: Text + Image */}
+            <div className="flex flex-col md:flex-row items-center gap-10 w-full">
+
+              {/* Left: Text — 40% */}
+              <div className="w-full md:w-2/5 flex flex-col justify-center gap-5">
+
+                {/* Body */}
+                <p className="type-body text-gray-200 font-normal leading-relaxed text-left">
+                  Entangle Protocol primitives unlock possibilities that were never possible before.
+                  The most powerful of them is <span className="font-bold text-white">Subnet Revenue Vaults</span>.
+
+                  <br />
+                  <br />
+                  AI agent subnet owners finally can own the value they create and
+                  reinvested autonomously through Subnet Revenue Vaults,
+                  with zero human intervention.
+                </p>
+
+                {/* Key points */}
+                <ul className="flex flex-col gap-4 text-sm mx-4 text-gray-300">
+                  {[
+                    "Accepts TradFi & crypto revenue",
+                    "Bridge directly to BittensorEVM",
+                    "Schedules autonomous alpha purchases",
+                  ].map((point) => (
+                    <li key={point} className="flex items-start gap-4">
+                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <div className="flex items-center gap-4 pt-2">
+
+                  <a href="docs.entangleprotocol.com" className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm text-white font-medium transition-all">
+                    Read Docs
+                  </a>
+                </div>
+
+              </div>
+
+              {/* Right: Image — 60% */}
+              <div className="w-full md:w-3/5 rounded-[12px] overflow-hidden border border-white/5 bg-black/20 backdrop-blur-md shadow-inner p-4">
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Image
+                    src={websiteCodeImg}
+                    alt="Subnet Revenue Vault Integration"
+                    className="w-full h-auto object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.25)] opacity-75"
+                    priority
+                  />
+                </motion.div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+
+
 
 
         {false && (
@@ -1800,7 +1948,7 @@ export default function Home() {
                 </div>
 
                 <a href="https://docs.entangleprotocol.com/" target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-label py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                  <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-body  py-2    rounded-[4px]  transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                     Read the Docs
                   </button>
                 </a>
@@ -1826,8 +1974,8 @@ export default function Home() {
                   <div><span className="text-[#cccccc]">$</span> 30% Scanner Rewards</div>
                 </div>
 
-                <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-label py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                  Run a Node
+                <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-body  py-2    rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                  Run a Neuron
                 </button>
 
                 <div className="text-[#888] type-label hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
@@ -1852,7 +2000,7 @@ export default function Home() {
                 </div>
 
                 <a href="https://discord.gg/CMWKzW8y" target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-label py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                  <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-body py-2  rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                     Join Discord
                   </button>
                 </a>
