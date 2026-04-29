@@ -563,14 +563,6 @@ export default function Home() {
     a: "PoS set",
   },
   {
-    f: "Latency",
-    sub: "Message finality time",
-    e: "<60s / <90s L1",
-    w: "1–5 min",
-    l: "<1 min",
-    a: "2–5 min",
-  },
-  {
     f: "Fee model",
     sub: "How users are charged",
     e: "Oracle-driven per-dst",
