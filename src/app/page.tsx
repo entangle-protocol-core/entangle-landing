@@ -191,7 +191,7 @@ export default function Home() {
           <span className="font-light text-base lowercase text-gray-200">entangle protocol</span>
         </div>
 
-        <a href="/entangle_protocol_v2_whitepaper.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/whitepaper.pdf" target="_blank" rel="noopener noreferrer">
           <button
             className="px-5 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]"
           >
