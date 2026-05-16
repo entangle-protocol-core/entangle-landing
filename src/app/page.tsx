@@ -211,12 +211,16 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-5">
-              <button
-                onClick={() => scrollTo('developers')}
-                className="px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-              >
-                GitHub
-              </button>
+              <a href="https://github.com/ent-bit-b/entangle-subnet" target="_blank" rel="noopener noreferrer">
+
+                <button
+                  onClick={() => scrollTo('developers')}
+                  className="px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                >
+                  GitHub
+                </button>
+              </a>
+
               <a href="https://docs.entangleprotocol.com/" target="_blank" rel="noopener noreferrer">
                 <button
                   className="px-8 py-3.5 bg-black/40 backdrop-blur-md border border-white/30 text-white font-medium rounded-full hover:bg-white/20 transition-all text-sm shadow-xl"
@@ -538,47 +542,47 @@ export default function Home() {
 
                   <div className="flex flex-col">
                     {[
-  {
-    f: "Miner entry",
-    sub: "Who can participate in validation / relaying",
-    e: "Permissionless TAO burn",
-    w: "Permissioned Guardians",
-    l: "Permissioned DVNs",
-    a: "Permissioned validators",
-  },
-  {
-    f: "Incentive",
-    sub: "How participants earn",
-    e: "Competitive TAO + fees",
-    w: "Protocol revenue share",
-    l: "DVN fees",
-    a: "Staking rewards",
-  },
-  {
-    f: "Architecture",
-    sub: "Core system design",
-    e: "Open subnet",
-    w: "19-Guardian multisig",
-    l: "DVN operator set",
-    a: "PoS set",
-  },
-  {
-    f: "Fee model",
-    sub: "How users are charged",
-    e: "Oracle-driven per-dst",
-    w: "Fixed / variable",
-    l: "Pay-as-you-go",
-    a: "Fixed",
-  },
-  {
-    f: "Chain extensibility",
-    sub: "How new chains are integrated",
-    e: "ChainAdapter interface",
-    w: "Per-chain deploys",
-    l: "DVN per chain",
-    a: "Per-chain voting",
-  },
-].map((row, i, arr) => (
+                      {
+                        f: "Miner entry",
+                        sub: "Who can participate in validation / relaying",
+                        e: "Permissionless TAO burn",
+                        w: "Permissioned Guardians",
+                        l: "Permissioned DVNs",
+                        a: "Permissioned validators",
+                      },
+                      {
+                        f: "Incentive",
+                        sub: "How participants earn",
+                        e: "Competitive TAO + fees",
+                        w: "Protocol revenue share",
+                        l: "DVN fees",
+                        a: "Staking rewards",
+                      },
+                      {
+                        f: "Architecture",
+                        sub: "Core system design",
+                        e: "Open subnet",
+                        w: "19-Guardian multisig",
+                        l: "DVN operator set",
+                        a: "PoS set",
+                      },
+                      {
+                        f: "Fee model",
+                        sub: "How users are charged",
+                        e: "Oracle-driven per-dst",
+                        w: "Fixed / variable",
+                        l: "Pay-as-you-go",
+                        a: "Fixed",
+                      },
+                      {
+                        f: "Chain extensibility",
+                        sub: "How new chains are integrated",
+                        e: "ChainAdapter interface",
+                        w: "Per-chain deploys",
+                        l: "DVN per chain",
+                        a: "Per-chain voting",
+                      },
+                    ].map((row, i, arr) => (
                       <div
                         key={i}
                         className={`grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 py-4 hover:bg-white/[0.02] transition-colors items-center text-[12px] ${i !== arr.length - 1 ? "border-b border-white/[0.03]" : ""}`}
@@ -1207,7 +1211,7 @@ export default function Home() {
                   <div className="absolute left-[20px] top-[-60px] w-[1.5px] h-[120px] bg-[#777777]"></div>
                   {/* Top arm to right */}
                   <div className="absolute left-[20px] top-[-60px] w-[42px] h-[1.5px] bg-[#777777]"></div>
-                  
+
                   {/* Bottom arm to right */}
                   <div className="absolute left-[20px] bottom-[-60px] w-[42px] h-[1.5px] bg-[#777777]"></div>
                 </div>
@@ -1301,7 +1305,7 @@ export default function Home() {
                 {/* CTA */}
                 <div className="flex items-center gap-4 pt-2">
 
-                  <a href="docs.entangleprotocol.com" className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm text-white font-medium transition-all">
+                  <a href="https://docs.entangleprotocol.com" className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm text-white font-medium transition-all">
                     Read Docs
                   </a>
                 </div>
@@ -1459,7 +1463,7 @@ export default function Home() {
                     Start Earning <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
                   </button>
 
-                  <a href="#" className="text-[#999] type-body underline underline-offset-[5px] decoration-[#444] hover:text-white hover:decoration-white transition-colors leading-none">
+                  <a href="https://docs.entangleprotocol.com/docs/running-a-miner" className="text-[#999] type-body underline underline-offset-[5px] decoration-[#444] hover:text-white hover:decoration-white transition-colors leading-none">
                     Read the Miner Documentation
                   </a>
                 </div>
@@ -1921,10 +1925,14 @@ export default function Home() {
                   </button>
                 </a>
 
-                <div className="text-[#888] type-label hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
-                  View GitHub
-                </div>
+                <a href="https://github.com/ent-bit-b/entangle-subnet" target="_blank" rel="noopener noreferrer" className="block w-full">
+
+                  <div className="text-[#888] type-label hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                    View GitHub
+                  </div>
+                </a>
+
               </div>
 
               {/* 2. Operators */}
@@ -1941,15 +1949,20 @@ export default function Home() {
                   <div><span className="text-[#cccccc]">$</span> 70% Relay Rewards</div>
                   <div><span className="text-[#cccccc]">$</span> 30% Scanner Rewards</div>
                 </div>
+                <a href="https://github.com/ent-bit-b/entangle-subnet" target="_blank" rel="noopener noreferrer" className="block w-full">
 
                 <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-body  py-2    rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                   Run a Neuron
                 </button>
+</a>
+                <a href="https://test.entangleprotocol.com/dashboard" target="_blank" rel="noopener noreferrer" className="block w-full">
 
                 <div className="text-[#888] type-label hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 9h4v12H5zm7-5h4v17h-4zm7 8h4v9h-4z" /></svg>
                   Subnet Stats
                 </div>
+                </a>
+
               </div>
 
               {/* 3. Community */}
@@ -1967,7 +1980,7 @@ export default function Home() {
                   <div><span className="text-white">#</span> governance</div>
                 </div>
 
-                <a href="https://discord.gg/CMWKzW8y" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <a href="https://discord.com/invite/bittensor" target="_blank" rel="noopener noreferrer" className="block w-full">
                   <button className="w-full bg-white hover:bg-gray-200 text-black font-bold type-body py-2  rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                     Join Discord
                   </button>
@@ -2124,18 +2137,41 @@ export default function Home() {
             The infrastructure layer cross-chain<br />commerce has been waiting for.
           </p>
           <div className="flex gap-4 mb-24">
-            <a href="https://discord.gg/CMWKzW8y" target="_blank" rel="noopener noreferrer">
+            <a href="https://discord.com/invite/bittensor" target="_blank" rel="noopener noreferrer">
               <button className="px-10 py-4 bg-white text-black font-bold text-base rounded-full hover:bg-gray-200 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 duration-200">Discord</button>
             </a>
           </div>
 
           <div className="flex flex-wrap justify-center gap-10 type-body text-gray-300 font-semibold w-full border-t border-white/20 pt-12 max-w-5xl drop-shadow-sm">
-            <span className="hover:text-white cursor-pointer transition-colors shadow-sm">Mine</span>
-            <span className="hover:text-white cursor-pointer transition-colors shadow-sm">Validate</span>
-            <span className="hover:text-white cursor-pointer transition-colors shadow-sm">Build</span>
-            <span className="hover:text-white cursor-pointer transition-colors shadow-sm">GitHub</span>
-            <a href="https://x.com/webuildentangle" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">Twitter / X</a>
-          </div>
+            <a href="https://docs.entangleprotocol.com/docs/running-a-miner" className="hover:text-white cursor-pointer transition-colors shadow-sm">
+              Mine
+            </a>
+
+            <a href="https://docs.entangleprotocol.com/docs/validators" className="hover:text-white cursor-pointer transition-colors shadow-sm">
+              Validate
+            </a>
+
+            <a href="https://docs.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">
+              Build
+            </a>
+
+            <a
+              href="https://github.com/ent-bit-b/entangle-subnet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white cursor-pointer transition-colors shadow-sm"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://x.com/webuildentangle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white cursor-pointer transition-colors shadow-sm"
+            >
+              Twitter / X
+            </a></div>
         </section>
       </div>
     </main >
