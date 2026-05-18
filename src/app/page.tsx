@@ -104,8 +104,6 @@ export default function Home() {
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-16">
           <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl relative z-10">
             <div className="mb-6 inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-md rounded-full px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#cccccc] animate-pulse"></span>
-              <span className="text-[11px] text-gray-200 uppercase tracking-[0.15em] font-medium">Bittensor Subnet · Permissionless</span>
             </div>
 
             <div className="relative mb-8">
@@ -294,9 +292,7 @@ export default function Home() {
               <h2 className="type-title text-metallic-premium drop-shadow-2xl">
                 Built for Agents, Not Just Humans
               </h2>
-              <p className="type-body text-gray-200 max-w-2xl mt-4">
-                Autonomous agents are becoming the primary actors in crypto. They need infrastructure that operates at machine speed - permissionlessly, across every chain.
-              </p>
+        
             </div>
 
             <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 border border-white/5 rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10">
