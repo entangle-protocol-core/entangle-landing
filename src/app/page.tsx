@@ -380,7 +380,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-12 pt-4">
 
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl text-3xl md:text-4xl font-bold tracking-tight">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
                 The Open Market Philosophy              </h2>
               <p className="type-body text-white drop-shadow-3xl max-w-2xl mt-4">
                 Traditional bridges run by hand-picked committees dictate high fees and cap network speeds. We replaced them with a free-market protocol where global operators must compete in real-time auctions to relay cross-chain data.
