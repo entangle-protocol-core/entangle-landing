@@ -2143,12 +2143,8 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-10 type-body text-gray-300 font-semibold w-full border-t border-white/20 pt-12 max-w-5xl drop-shadow-sm">
-            <a href="https://docs.entangleprotocol.com/docs/running-a-miner" className="hover:text-white cursor-pointer transition-colors shadow-sm">
-              Mine
-            </a>
-
-            <a href="https://docs.entangleprotocol.com/docs/validators" className="hover:text-white cursor-pointer transition-colors shadow-sm">
-              Validate
+            <a href="https://test.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">
+              Demo
             </a>
 
             <a href="https://docs.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">
