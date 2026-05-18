@@ -857,8 +857,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-10 type-body text-gray-300 font-semibold w-full border-t border-white/20 pt-12 max-w-5xl drop-shadow-sm">
-            <a href="https://docs.entangleprotocol.com/docs/running-a-miner" className="hover:text-white cursor-pointer transition-colors shadow-sm">Mine</a>
-            <a href="https://docs.entangleprotocol.com/docs/validators" className="hover:text-white cursor-pointer transition-colors shadow-sm">Validate</a>
+            <a href="https://test.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">Demo</a>
             <a href="https://docs.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">Build</a>
             <a href="https://github.com/Entangle-Foundation/entangle-subnet" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">GitHub</a>
             <a href="https://x.com/webuildentangle" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">Twitter / X</a>
