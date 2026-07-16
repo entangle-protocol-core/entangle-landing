@@ -41,28 +41,6 @@ const chainSupport = [
   ['Stellar', 'Soroban'],
 ] as const;
 
-function SectionHeader({
-  eyebrow,
-  title,
-  description,
-  centered = false,
-}: {
-  eyebrow: string;
-  title: React.ReactNode;
-  description?: React.ReactNode;
-  centered?: boolean;
-}) {
-  return (
-    <div className={(centered ? 'max-w-3xl mx-auto text-center ' : 'max-w-3xl ') + "relative z-10"}>
-      <span className="text-gray-200 font-medium type-body mb-5 block text-shadow-strong">{eyebrow}</span>
-      <h2 className={`type-title ${description ? 'mb-6' : 'mb-0'} text-metallic-premium drop-shadow-xl leading-[1.15]`}>{title}</h2>
-      {description ? (
-        <p className="type-body text-gray-100 leading-relaxed text-shadow-strong">{description}</p>
-      ) : null}
-    </div>
-  );
-}
-
 export default function Home() {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -104,64 +82,352 @@ export default function Home() {
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 pb-12 sm:pb-16">
           <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl relative z-10">
 
+            <span className="inline-block px-4 py-1.5 mb-6 sm:mb-8 rounded-full border border-white/15 bg-white/5 backdrop-blur-md text-gray-200 text-[11px] sm:text-xs tracking-wider font-medium text-shadow-strong">
+              Cross-Chain Messaging Subnet
+            </span>
+
             <div className="relative mb-6 sm:mb-8 w-full">
-                <h1 className="type-display text-metallic-premium drop-shadow-2xl max-w-4xl mx-auto px-4 sm:px-6 md:px-8 overflow-visible">
-                <span className="block text-[0.80em] xs:text-[0.86em] md:text-[0.86em] leading-tight drop">Enabling Autonomous</span>
-                <span className="block text-[0.80em] xs:text-[0.86em] md:text-[0.86em] leading-tight pb-2 sm:pb-3 -mt-2 sm:-mt-3">Finance Across Chains</span>
+                <h1 className="type-display text-metallic-premium drop-shadow-2xl max-w-5xl mx-auto px-4 sm:px-6 md:px-8 overflow-visible">
+                <span className="block text-[0.62em] xs:text-[0.68em] md:text-[0.68em] leading-tight pb-2 sm:pb-3 drop">Connecting 400M+ Wallets Directly to Subnets Alpha and Services</span>
                 </h1>
             </div>
 
             <p className="type-body text-gray-200 max-w-xs sm:max-w-xl mb-8 sm:mb-10 leading-relaxed text-shadow-strong drop-shadow-lg text-sm sm:text-base">
-              The first fully permissionless cross-chain messaging protocol. Agents, subnets, and protocols move value and instructions across every chain.
+              Entangle is a cross-chain messaging subnet built on Bittensor. It enables users in major chains to directly buy Alpha and pay for subnet services using their native tokens without leaving their chains.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
-              <a href="https://github.com/Entangle-Foundation/entangle-subnet" target="_blank" rel="noopener noreferrer">
-                <button className="px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                  GitHub
-                </button>
-              </a>
-              <a href="https://docs.entangleprotocol.com/" target="_blank" rel="noopener noreferrer">
-                <button className="px-6 sm:px-8 py-3 sm:py-3.5 bg-black/40 backdrop-blur-md border border-white/30 text-white font-medium rounded-full hover:bg-white/20 transition-all text-sm shadow-xl">
-                  Docs
-                </button>
-              </a>
+              <button onClick={() => scrollTo('alpha-market')} className="px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Explore Alpha Market
+              </button>
+              <button onClick={() => scrollTo('alpha-services')} className="px-6 sm:px-8 py-3 sm:py-3.5 bg-black/40 backdrop-blur-md border border-white/30 text-white font-medium rounded-full hover:bg-white/20 transition-all text-sm shadow-xl">
+                Explore Subnet Services
+              </button>
             </div>
           </motion.div>
         </section>
 
 
-        {/* ─── AGENTIC FINANCE ─── */}
-        <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+        {/* ─── THE PROBLEM ─── */}
+        <section id="problem" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-4 pt-4">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl text-[1.4rem] sm:text-[1.75rem] md:text-3xl">
+                The Subnet Access Problem Today
+              </h2>
+              <p className="type-body text-gray-200 max-w-xs sm:max-w-2xl mt-3 sm:mt-4 text-sm sm:text-base">
+                Bittensor subnets produce some of the most valuable on-chain services in crypto — inference, storage, training, data. But the path for external capital and users is broken.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10">
+              {[
+                {
+                  num: "01 / 03",
+                  title: "CEX Friction & KYC Hops",
+                  desc: "Users are forced to CEX-ramp into TAO, then swap into subnet Alphas — adding friction, KYC, and extra hops for anyone outside the TAO-native ecosystem.",
+                  icon: <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                },
+                {
+                  num: "02 / 03",
+                  title: "Fragmented Subnet Liquidity",
+                  desc: "Subnet treasuries fragment liquidity across dozens of wrappers, bridges, and DEX pools, making it harder to build deep, efficient markets for subnet tokens.",
+                  icon: <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="18" r="3" /><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" /></svg>
+                },
+                {
+                  num: "03 / 03",
+                  title: "Off-Chain Service Payments",
+                  desc: "Paying for compute is often off-chain — invoices, bank transfers, or manual stablecoin sweeps — pulling subnet services out of the very infrastructure they're built on.",
+                  icon: <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1M10 21v-4h4v4" /></svg>
+                }
+              ].map((item) => (
+                <div key={item.title} className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/5 transition-colors">
+                  <div className="text-[#555] font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">{item.num}</div>
+                  <div className="mb-6 sm:mb-8 w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-start text-[#cccccc]">
+                    {item.icon}
+                  </div>
+                  <h3 className="type-subtitle text-white mb-3 text-sm sm:text-base">{item.title}</h3>
+                  <p className="type-body text-[#888] flex-grow pr-0 sm:pr-2 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 sm:mt-6 p-4 sm:p-5 bg-black/20 backdrop-blur-md border border-white/5 border-l-[4px] border-l-[#cccccc] rounded-[10px] sm:rounded-[12px] shadow-inner relative z-10">
+              <p className="type-body text-[#888] text-sm leading-relaxed">
+                <span className="text-white font-semibold">This locks out the 400M+ wallets</span> already active on Ethereum, Solana, Base, and beyond. For Bittensor to capture the full market, that friction has to disappear — and a solution must be <span className="text-white font-semibold">native to the network</span>, not another external bridge.
+              </p>
+            </div>
+          </motion.div>
+        </section>
+
+
+        {/* ─── INFRASTRUCTURE: ENTANGLE SUBNET ─── */}
+        <section id="infrastructure" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl text-[1.4rem] sm:text-[1.75rem] md:text-3xl">
+                Built for Bittensor, Secured by TAO
+              </h2>
+       
+              <p className="type-body text-gray-200 max-w-xs sm:max-w-2xl mt-3 sm:mt-4 text-sm sm:text-base">
+                Entangle Protocol is a subnet on Bittensor network that provides trust-minimized, validator-secured cross-chain messaging. Miners and validators within the subnet reach consensus on external chain states and deliver those states to applications running directly on the Entangle subnet.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-center relative z-10">
+
+              {/* Left: diagram */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                viewport={{ once: true }}
+                className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[10px] sm:rounded-[12px] p-5 sm:p-8 overflow-hidden"
+              >
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-full px-2 sm:px-6"
+                >
+                  <Image
+                    src={entImg}
+                    alt="Entangle Protocol Network Structure"
+                    className="relative z-10 w-full h-auto object-contain scale-110 sm:scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.20] sm:hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
+                    priority
+                  />
+                </motion.div>
+              </motion.div>
+
+              {/* Right: feature list, one item per row */}
+              <div className="flex flex-col divide-y divide-white/5 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner">
+                {[
+                  {
+                    title: "Subnet-Native Security",
+                    desc: "Consensus verified by TAO-secured validators.",
+                    icon: <svg className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>
+                  },
+                  {
+                    title: "Cross-Chain Messaging",
+                    desc: "Not wrapped assets: no synthetic tokens, no fragmented pools.",
+                    icon: <svg className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+                  },
+                  {
+                    title: "Application Layer",
+                    desc: "Developers can build dApps (like Alpha Market & Subnet Services) that inherit cross-chain reach without leaving Bittensor.",
+                    icon: <svg className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                  }
+                ].map((item) => (
+                  <div key={item.title} className="p-4 sm:p-5 md:p-6 flex flex-row items-start gap-4 hover:bg-white/5 transition-colors">
+                    <div className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/10 flex items-center justify-center text-[#cccccc]">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-[11px] sm:text-[12px] md:text-[13px] font-bold text-white mb-1.5 tracking-wider uppercase font-sans">{item.title}</h3>
+                      <p className="text-[12px] sm:text-[12px] lg:text-[13px] text-[#888] leading-[1.65] font-medium">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+   
+          </motion.div>
+        </section>
+
+
+        {/* ─── ALPHA MARKET & Subnet Services ─── */}
+        <section id="alpha-market" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl text-[1.4rem] sm:text-[1.75rem] md:text-3xl">
                 Infrastructure for Autonomous Cross Chain Finance
               </h2>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-10 w-full">
-              <div className="w-full md:w-2/5 flex flex-col justify-center gap-5">
-                <p className="type-body text-gray-200 max-w-xl mb-3 leading-relaxed text-shadow-strong drop-shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 relative z-10">
 
-                  Financial infrastructure is entering a new era where AI agents become the primary economic actors of the internet.
-                  These systems execute trades, route liquidity, coordinate treasury operations, and move capital across ecosystems continuously without human latency.
+              {/* Alpha Market */}
+              <div className="border border-white/5 border-t-[3px] border-t-[#cccccc] rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner p-5 sm:p-6 md:p-8 flex flex-col hover:bg-white/5 transition-colors">
+                <div className="w-[44px] h-[44px] sm:w-[50px] sm:h-[50px] rounded-full bg-[#cccccc]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#cccccc]">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>
+                </div>
+                <h3 className="text-white text-[22px] sm:text-[26px] font-bold mb-2">Alpha Market</h3>
+                <p className="text-[#cccccc] type-body font-medium text-sm mb-4">Buy any subnet Alpha. Stay in your wallet. Stay on your chain.</p>
+                <p className="type-body text-[#888] text-sm mb-5 sm:mb-6 leading-relaxed">
+                  Alpha Market runs on the Entangle subnet, using its cross-chain messaging to let users purchase subnet tokens (Alphas) directly from their native L1 or L2, without ever touching a CEX or a bridge.
                 </p>
-
-                <ul className="flex flex-col gap-4 text-sm mx-4 text-gray-300">
+                <ul className="flex flex-col gap-3 sm:gap-4 text-sm text-gray-300 mb-6 sm:mb-8 flex-grow">
                   {[
-
-                    "Cross chain messaging layer built for autonomous AI coordination and treasury execution",
-                    "Programmatic alpha acquisition pipelines executed without manual intervention",
-                    "Enables subnet economies to become self-operating financial systems",
+                    "Solana wallet pays USDC → subnet receives native Alpha. No wrapped tokens. No multi-chain liquidity pools.",
+                    "400M+ wallets across Ethereum, Solana, Base, Cosmos, and more — all become onchain buyers of Bittensor subnet tokens.",
+                    "Subnet liquidity stays whole: every trade settles into the subnet's native pair, keeping depth concentrated and treasury management simple.",
                   ].map((point) => (
-                    <li key={point} className="flex items-start gap-4">
-                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                       {point}
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto bg-[#cccccc]/5 border border-[#cccccc]/10 rounded-[6px] px-4 py-3 text-[12px] sm:text-[13px] text-gray-200 leading-relaxed">
+                  <span className="text-white font-bold">For subnet builders:</span> one integration. All chains. No fragmented liquidity.
+                </div>
+              </div>
+
+              {/* Subnet Services */}
+              <div id="alpha-services" className="border border-white/5 border-t-[3px] border-t-white rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner p-5 sm:p-6 md:p-8 flex flex-col hover:bg-white/5 transition-colors">
+                <div className="w-[44px] h-[44px] sm:w-[50px] sm:h-[50px] rounded-full bg-[#cccccc]/10 flex items-center justify-center mb-5 sm:mb-6 text-[#cccccc]">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+                </div>
+                <h3 className="text-white text-[22px] sm:text-[26px] font-bold mb-2">Subnet Services</h3>
+                <p className="text-[#cccccc] type-body font-medium text-sm mb-4">Pay for compute, inference, or API access — from any chain, in your native token.</p>
+                <p className="type-body text-[#888] text-sm mb-5 sm:mb-6 leading-relaxed">
+                  Subnet Services leverages Entangle's cross-chain messaging to allow users to pay for subnet services (inference calls, storage, bandwidth, model access) directly on-chain, using whatever asset they hold.
+                </p>
+                <ul className="flex flex-col gap-3 sm:gap-4 text-sm text-gray-300 mb-6 sm:mb-8 flex-grow">
+                  {[
+                    "No more invoices or TradFi off-ramps. A single transaction from any wallet settles payment into the subnet's native service token.",
+                    "Subnets monetise instantly — every chain becomes a payment rail, without them needing to accept a dozen wrapped stables or manage separate treasury accounts.",
+                    "Composability without compromise: users stay in their own ecosystem, subnet services stay fully on-chain, and value flows directly to miners/validators.",
+                  ].map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto bg-[#cccccc]/5 border border-[#cccccc]/10 rounded-[6px] px-4 py-3 text-[12px] sm:text-[13px] text-gray-200 leading-relaxed">
+                  <span className="text-white font-bold">For service providers:</span> instant access to a 400M-wallet market, with zero additional accounting overhead.
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+
+        {/* ─── THE "THREE WITHOUT" PROMISES ─── */}
+        <section id="three-without" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl text-[1.4rem] sm:text-[1.75rem] md:text-3xl">
+                The Promises
+              </h2>
+    
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10">
+              {[
+                {
+                  num: "01",
+                  title: "Without fragmenting subnet liquidity",
+                  desc: "All cross-chain orders are net-settled through the subnet's messaging layer into the native Alpha or service token, preserving a single, deep liquidity pool.",
+                },
+                {
+                  num: "02",
+                  title: "Without forcing users through a CEX",
+                  desc: "Entangle's validators attest to the user's chain-native payment, and the subnet executes the corresponding action. Self-custody, fully on-chain, no exchange accounts.",
+                },
+                {
+                  num: "03",
+                  title: "Without using TradFi for subnet service payments",
+                  desc: "Subnet Services turns compute access into a pure crypto transaction — from any chain — with settlement happening at the subnet level. No bank, no card, no manual sweep.",
+                }
+              ].map((item) => (
+                <div key={item.num} className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/5 transition-colors">
+                  <div className="text-[36px] sm:text-[44px] font-bold text-[#cccccc]/40 leading-none mb-4 sm:mb-5 drop-shadow-[0_0_15px_rgba(204,204,204,0.15)]">{item.num}</div>
+                  <h3 className="type-subtitle text-white mb-3 text-sm sm:text-base">{item.title}</h3>
+                  <p className="type-body text-[#888] text-sm pr-0 sm:pr-2">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+
+        {/* ─── COMMUNITY IMPACT ─── */}
+        <section id="community-impact" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
+          
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl text-[1.4rem] sm:text-[1.75rem] md:text-3xl">
+                What This Means for the Bittensor Community
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10">
+              {[
+                {
+                  title: "For subnet owners & builders",
+                  desc: "Onboard users from every major chain without fragmenting your liquidity. Monetize services in a fully on-chain, programmable way.",
+                  icon: <svg className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20M4 20V8l8-5 8 5v12M10 20v-6h4v6" /></svg>
+                },
+                {
+                  title: "For validators & miners on Entangle subnet",
+                  desc: "Secure real cross-chain message traffic and earn TAO from a utility subnet that powers direct DeFi-level applications.",
+                  icon: <svg className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 4l6 6M4 20l6.5-6.5M12 6l6 6-3 3-6-6 3-3z" /></svg>
+                },
+                {
+                  title: "For TAO holders & stakers",
+                  desc: "A subnet that brings external capital and users directly into the Bittensor economy, increasing the overall utility and demand for TAO.",
+                  icon: <svg className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12l4 6-10 12L2 9l4-6zM2 9h20M9 3l3 6 3-6M12 9v12" /></svg>
+                }
+              ].map((item) => (
+                <div key={item.title} className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/5 transition-colors">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/10 flex items-center justify-center mb-4 sm:mb-5 text-[#cccccc]">
+                    {item.icon}
+                  </div>
+                  <h3 className="type-subtitle text-white mb-3 text-sm sm:text-base">{item.title}</h3>
+                  <p className="type-body text-[#888] text-sm pr-0 sm:pr-2">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+    
+          </motion.div>
+        </section>
+
+
+        {/* ─── AGENTIC FINANCE + HOW IT FLOWS ─── */}
+        <section id="simple-integration" className="w-full relative z-10 my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+            <div className="flex flex-col items-center text-center w-full relative z-10 mb-6 sm:mb-8 pt-4">
+   
+
+                        <h2 className="type-title text-metallic-premium drop-shadow-2xl text-[1.4rem] sm:text-[1.75rem] md:text-3xl">
+                Simple for Users, Powerful for Subnets
+              </h2>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center gap-10 w-full">
+              <div id="how-it-flows" className="w-full md:w-1/2 flex flex-col justify-center gap-5">
+       
+
+                <div>
+          
+                  <p className="type-body text-gray-300 text-sm">How it works.</p>
+                </div>
+
+                <ol className="flex flex-col divide-y divide-white/5 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner">
+                  {[
+                    "User connects any wallet (MetaMask, Phantom, Keplr, etc.) on any chain.",
+                    'Select "Buy Alpha" (Alpha Market) or "Pay for Service" (Subnet Services).',
+                    "Confirm the transaction in their native token.",
+                    "Entangle subnet validates the source chain event, reaches consensus, and triggers the corresponding action on the target subnet.",
+                    "Subnet receives native Alpha or service payment — fully settled, no extra steps.",
+                  ].map((step, i) => (
+                    <li key={i} className="flex items-start gap-3 p-3 sm:p-3.5 hover:bg-white/5 transition-colors">
+                      <span className="shrink-0 w-6 h-6 rounded-full bg-[#cccccc]/10 border border-[#cccccc]/20 text-[#cccccc] flex items-center justify-center font-bold font-mono text-[11px]">
+                        {i + 1}
+                      </span>
+                      <span className="type-body text-gray-300 text-sm leading-relaxed pt-0.5">{step}</span>
+                    </li>
+                  ))}
+                </ol>
 
                 <div className="flex items-center gap-4 pt-2">
                   <a
@@ -173,7 +439,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-full md:w-3/5 rounded-[12px] overflow-hidden border border-white/5 bg-black/20 backdrop-blur-md shadow-inner p-4">
+              <div className="w-full md:w-1/2 rounded-[12px] overflow-hidden border border-white/5 bg-black/20 backdrop-blur-md shadow-inner p-4">
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -285,7 +551,7 @@ export default function Home() {
         </section>
 
         {/* ─── AGENTIC ERA USE CASES ─── */}
-        <section id="use-cases" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+        {/* <section id="use-cases" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
           <div className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
@@ -294,10 +560,8 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* Stack on mobile, 3-col on md */}
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10">
 
-              {/* Card 1 */}
               <div className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/5 transition-colors">
                 <div className="text-[#555] font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">01 / 03</div>
                 <div className="mb-6 sm:mb-8 w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-start text-[#cccccc]">
@@ -315,7 +579,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Card 2 */}
               <div className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/5 transition-colors">
                 <div className="text-[#555] font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">02 / 03</div>
                 <div className="mb-6 sm:mb-8 w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-start text-[#cccccc]">
@@ -335,7 +598,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Card 3 */}
               <div className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/5 transition-colors">
                 <div className="text-[#555] font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">
                   03 / 03
@@ -358,11 +620,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+
+
 
 
         {/* ─── THE POWER OF THE RELAY MARKETPLACE ─── */}
-        <section id="protocol-flow" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+        {/* <section id="protocol-flow" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
           <div className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-8 sm:mb-12 pt-3 sm:pt-4">
@@ -374,10 +638,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Stack on mobile, 3-col on md */}
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 border border-white/5 rounded-[18px] sm:rounded-[20px] bg-black/20 backdrop-blur-md shadow-inner relative z-10 overflow-hidden">
 
-              {/* Speed */}
               <div className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/[0.02] transition-colors group">
                 <div className="text-[#555] group-hover:text-[#cccccc] transition-colors font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">OUTCOME 01</div>
                 <div className="mb-5 sm:mb-6 w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-start text-[#cccccc]">
@@ -396,7 +658,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Cost */}
               <div className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/[0.02] transition-colors group">
                 <div className="text-[#555] group-hover:text-[#cccccc] transition-colors font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">OUTCOME 02</div>
                 <div className="mb-5 sm:mb-6 w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-start text-[#cccccc]">
@@ -413,7 +674,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Bitcoin Philosophy */}
               <div className="p-5 sm:p-6 md:p-8 flex flex-col items-start hover:bg-white/[0.02] transition-colors group">
                 <div className="text-[#555] group-hover:text-[#cccccc] transition-colors font-mono text-[10px] tracking-widest mb-6 sm:mb-8 font-bold">OUTCOME 03</div>
                 <div className="mb-5 sm:mb-6 w-9 h-9 sm:w-10 sm:h-10 relative flex items-center justify-start text-[#cccccc]">
@@ -432,11 +692,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
         {/* ─── COMPARISON TABLE ─── */}
-        <section id="competition" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+        {/* <section id="competition" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-6 sm:mb-8 pt-3 sm:pt-4">
@@ -449,7 +709,6 @@ export default function Home() {
             </div>
 
             <div className="border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner overflow-x-auto relative z-10 p-4 sm:p-6 md:p-8">
-              {/* Mobile: scrollable table with min-width; desktop: normal */}
               <div className="min-w-[600px] sm:min-w-[700px] md:min-w-[800px] relative">
                 <div className="absolute top-10 bottom-10 left-[31%] w-[20%] bg-white/[0.06] blur-[60px] rounded-full pointer-events-none z-0"></div>
                 <div className="relative z-10">
@@ -508,61 +767,14 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-        </section>
+        </section> */}
 
 
-
-        {/* ─── VISION STATEMENT ─── */}
-        <section className="my-16 sm:my-24 md:my-32 py-0 px-4 sm:px-8 md:px-16 lg:py-0 lg:px-20 max-w-[1300px] mx-auto w-full overflow-hidden">
-          <div className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-4 md:gap-6 items-center">
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              viewport={{ once: true }}
-              className="relative w-full flex justify-center items-center bg-black/20 backdrop-blur-md border border-white/5 rounded-[10px] sm:rounded-[12px] p-5 sm:p-8 overflow-hidden"
-            >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="w-full px-2 sm:px-6"
-              >
-                <Image
-                  src={entImg}
-                  alt="Entangle Protocol Network Structure"
-                  className="relative z-10 w-full h-auto object-contain scale-110 sm:scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.20] sm:hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
-                  priority
-                />
-              </motion.div>
-            </motion.div>
-
-            <div className="flex flex-col justify-center h-full relative">
-              <div className="relative z-10">
-                <SectionHeader
-                  eyebrow={""}
-                  title={
-                    <span className="text-white text-[1.3rem] sm:text-[1.6rem] md:text-[1.75rem]">
-                      Entangle Protocol as a Bittensor Subnet
-                    </span>
-                  }
-                />
-                <div className="w-full sm:w-100 h-[2px] bg-gradient-to-r from-white/60 to-transparent my-6 sm:my-8 rounded-full"></div>
-                <p className="type-body text-gray-300 font-normal max-w-xl mb-4 sm:mb-6 text-sm sm:text-base">
-                  Most cross-chain protocols route messages through permissioned operators you have to trust. Entangle replaces trust with competition. Every message delivery is an open auction: independent miners race to relay it, validators enforce the rules, and Bittensor's Yuma Consensus allocates rewards to whoever performs best.
-                </p>
-                <p className="type-body text-white font-medium max-w-xl text-sm sm:text-base">
-                  A relay network that self-optimises. No committee. No whitelist.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
 
 
         {/* ─── PROTOCOL PROPERTIES ─── */}
-        <section className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+        {/* <section className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-7 sm:mb-10 pt-3 sm:pt-4">
@@ -571,7 +783,6 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* 1-col mobile, 2-col sm, 3-col lg */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-white/5 rounded-[10px] sm:rounded-[12px] bg-black/20 backdrop-blur-md shadow-inner relative z-10 overflow-hidden">
               {[
                 {
@@ -626,11 +837,11 @@ export default function Home() {
               ))}
             </div>
           </motion.div>
-        </section>
+        </section> */}
 
 
         {/* ─── INCENTIVE ALIGNMENT / TOKENOMIC FLYWHEEL ─── */}
-        <section id="realtime-fees" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
+        {/* <section id="realtime-fees" className="w-full relative z-10 my-16 sm:my-24 md:my-32 px-4 sm:px-6">
           <div className="surface-glass-strong p-5 sm:p-6 md:p-8 lg:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             <div className="flex flex-col items-center justify-center text-center w-full relative z-10 mb-8 sm:mb-12 pt-4 sm:pt-6">
@@ -642,10 +853,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Mobile: stacked vertically; xl: horizontal row */}
             <div className="relative flex flex-col items-center gap-5 sm:gap-6 xl:flex-row xl:items-center xl:justify-center xl:gap-[0px] w-full max-w-[950px] mx-auto z-10">
 
-              {/* Left: dApp */}
               <div className="w-full sm:w-[320px] xl:w-[260px] bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] rounded-[10px] p-5 relative z-10 shrink-0">
                 <div className="flex justify-between items-start mb-4 mt-1">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-2V9h2zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z" /></svg>
@@ -658,21 +867,18 @@ export default function Home() {
                 <div className="text-[#666] type-body mb-4 text-sm">Calls <span className="bg-[#0b1d26] text-[#cccccc] px-1.5 py-0.5 rounded text-[12px] border border-[#cccccc]/10 font-mono">sendMessage()</span></div>
                 <div className="text-[#bbb] type-body font-semibold text-sm">Pays Native Gas Fee</div>
 
-                {/* Arrow down on mobile */}
                 <div className="xl:hidden flex justify-center pt-5">
                   <svg className="w-5 h-5 text-[#777777]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
                   </svg>
                 </div>
 
-                {/* Arrow right on xl */}
                 <div className="hidden xl:block absolute right-[-40px] top-1/2 w-[40px] h-[1.5px] bg-[#777777] -translate-y-1/2 z-0"></div>
                 <div className="hidden xl:block absolute right-[-40px] top-1/2 w-[0] h-[0] border-t-[5px] border-b-[5px] border-l-[6px] border-transparent border-l-[#777777] transform -translate-y-1/2 z-10"></div>
               </div>
 
               <div className="hidden xl:block w-[40px] shrink-0"></div>
 
-              {/* Middle: Entangle Core */}
               <div className="w-full sm:w-[320px] xl:w-[280px] bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] rounded-[8px] p-5 relative z-10 shrink-0 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
                 <div className="absolute top-[-1px] left-0 right-0 h-[3px] bg-white rounded-t-[8px] opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
                 <div className="text-white type-label mb-4 mt-0.5 text-xs sm:text-sm">Entangle Core</div>
@@ -697,14 +903,12 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Arrow down on mobile */}
                 <div className="xl:hidden flex justify-center pt-5">
                   <svg className="w-5 h-5 text-[#777777]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
                   </svg>
                 </div>
 
-                {/* XL connector lines */}
                 <div className="hidden xl:block absolute right-[-62px] top-1/2 -translate-y-1/2 w-[62px] z-0">
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[20px] h-[1.5px] bg-[#777777]"></div>
                   <div className="absolute left-[20px] top-[-60px] w-[1.5px] h-[120px] bg-[#777777]"></div>
@@ -715,7 +919,6 @@ export default function Home() {
 
               <div className="hidden xl:block w-[50px] shrink-0 relative z-0"></div>
 
-              {/* Right: Reward cards */}
               <div className="flex flex-col gap-4 shrink-0 w-full sm:w-[320px] xl:w-[300px]">
                 <div className="bg-black/20 backdrop-blur-md shadow-inner border border-[#444444] border-l-[3px] border-l-[#cccccc] rounded-[8px] p-5 shadow-[0_0_20px_rgba(204,204,204,0.06)] relative z-10 w-full overflow-hidden hover:bg-white/5 transition-colors">
                   <div className="absolute inset-0 border border-[#cccccc]/[0.05] rounded-[8px] pointer-events-none"></div>
@@ -743,7 +946,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
         {/* ─── ACTIONS / CTA GRID ─── */}
@@ -821,7 +1024,7 @@ export default function Home() {
                   Follow protocol development, participate in governance discussions, and connect with other builders working on the cross-chain agentic stack.
                 </div>
                 <div className="text-[11px] text-[#777] leading-[1.8] mb-6 sm:mb-8">
-                  <div><span className="text-white">#</span> announcements</div>
+                  <div><span className="text-white">#</span> earn</div>
                   <div><span className="text-white">#</span> governance</div>
                 </div>
                 <a href="https://discord.com/invite/bittensor" target="_blank" rel="noopener noreferrer" className="block w-full">
@@ -854,11 +1057,21 @@ export default function Home() {
               <button className="px-8 sm:px-10 py-3.5 sm:py-4 bg-white text-black font-bold text-sm sm:text-base rounded-full hover:bg-gray-200 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 duration-200">Join Discord</button>
             </a>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 type-body text-gray-300 font-semibold w-full border-t border-white/20 pt-8 sm:pt-12 max-w-5xl drop-shadow-sm text-sm sm:text-base">
-            <a href="https://test.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">Demo</a>
-            <a href="https://litepaper.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">Litepaper</a>
-            <a href="https://github.com/Entangle-Foundation/entangle-subnet" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">GitHub</a>
-            <a href="https://x.com/webuildentangle" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">Twitter / X</a>
+          <div className="w-full border-t border-white/20 pt-8 sm:pt-12 max-w-5xl flex flex-col items-center gap-6 sm:gap-8">
+        
+
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-x-10 type-body text-gray-300 font-semibold drop-shadow-sm text-sm sm:text-base">
+       
+    
+              <a href="https://github.com/Entangle-Foundation/entangle-subnet" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">GitHub</a>
+              <a href="https://test.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">Demo</a>
+              <a href="https://litepaper.entangleprotocol.com" className="hover:text-white cursor-pointer transition-colors shadow-sm">Litepaper</a>
+              <a href="https://x.com/webuildentangle" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">Twitter / X</a>
+              <a href="https://discord.com/invite/bittensor" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors shadow-sm">Discord</a>
+
+            </div>
+
+      
           </div>
         </section>
 
